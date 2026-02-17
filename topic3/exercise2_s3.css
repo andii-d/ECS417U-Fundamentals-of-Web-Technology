@@ -1,0 +1,12 @@
+/* exercise2_s3.css */
+
+body {
+    font-size: 12pt;
+    background-color: white;
+    color: blueviolet;
+}
+
+a {
+    color: blueviolet;
+    text-decoration: underline;
+}

@@ -1,0 +1,10 @@
+/* exercise2_s2.css */
+
+p, ul {
+    background-color: red;
+    font-size: 24pt;
+}
+
+#cool, .shiny {
+    background-color: yellow;
+}

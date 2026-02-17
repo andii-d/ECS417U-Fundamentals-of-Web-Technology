@@ -1,0 +1,15 @@
+/* exercise3.css */
+
+.p1 {
+    background-color: pink;
+    color: blue;
+    font-family: serif;
+    font-size: 12pt;
+}
+
+.p2 {
+    background-color: green;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+}

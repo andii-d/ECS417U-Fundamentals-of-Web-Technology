@@ -1,0 +1,123 @@
+/* =========================
+   GLOBAL PAGE STYLING
+   ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e2a38;
+    color: #111;
+    line-height: 1.5;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background-color: #2c8f5a;
+    color: white;
+    padding: 1.5em;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header h2 {
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    background-color: #4bb37a;
+    padding: 0.8em;
+}
+
+nav ul {
+    display: flex;
+    gap: 1em;
+}
+
+nav a {
+    color: #002b36;
+    font-weight: bold;
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+article {
+    background-color: #f4f4f4;
+    margin: 1.5em auto;
+    padding: 1.5em;
+    width: 85%;
+    border-radius: 0.5em;
+}
+
+section {
+    margin-bottom: 1.5em;
+}
+
+h2 {
+    border-bottom: 0.1em solid #ccc;
+    margin-bottom: 0.5em;
+    font-size: 1.3rem;
+}
+
+/* =========================
+   FIGURE
+   ========================= */
+
+figure {
+    text-align: center;
+    margin-top: 1em;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.5em;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    background-color: #2c8f5a;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 1.5em;
+}
+
+.extra-gap a {
+    color: blue;
+    font-weight: bold;
+}
+
+.extra-gap a:hover {
+    color: red;
+}
+
+ul a {
+    color: blue;
+}
+
+ul a:hover {
+    color: red;
+}
+
+.back-link {
+    color: darkblue;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    color: darkred;
+}

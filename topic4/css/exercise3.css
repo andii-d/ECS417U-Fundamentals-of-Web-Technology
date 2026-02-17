@@ -1,0 +1,11 @@
+caption {
+    background: pink;
+    font-weight: bold;
+    padding: 0.5em;
+}
+
+td, th {
+    border: 1px solid gray;
+    padding: 0.5em;
+    text-align: center;
+}

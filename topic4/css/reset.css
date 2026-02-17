@@ -1,0 +1,29 @@
+/* =========================
+   RESET: Core HTML Elements
+   ========================= */
+
+html, body, header, nav, article, section, footer,
+h1, h2, p, ul, li, figure, figcaption, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Remove list styling */
+ul {
+    list-style: none;
+}
+
+/* Remove default link styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,59 @@
+<form method="GET"
+      action="https://drusmannaeem.co.uk/process.php">
+
+<h2>Shirt Order Form</h2>
+
+<label>Shirt Size</label>
+<select name="shirt_size">
+  <option>XS</option>
+  <option>S</option>
+  <option>M</option>
+  <option>L</option>
+  <option>XL</option>
+</select>
+
+<p>Sleeves</p>
+<label><input type="radio" name="sleeves" value="short" checked> Short</label>
+<label><input type="radio" name="sleeves" value="long"> Long</label>
+
+<label>Colour</label>
+<input type="color" name="colour">
+
+<label>Quantity</label>
+<input type="range" name="quantity" min="1" max="10">
+
+<label>Date</label>
+<input type="date" name="date">
+
+<label>Name</label>
+<input type="text" name="name">
+
+<label>Email</label>
+<input type="email" name="email">
+
+<label>Telephone</label>
+<input type="tel"
+       name="telephone"
+       pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+<label>City</label>
+<input list="cities" name="city">
+<datalist id="cities">
+  <option>London</option>
+  <option>Manchester</option>
+  <option>Birmingham</option>
+  <option>Glasgow</option>
+</datalist>
+
+<label>Postcode</label>
+<input type="text" name="postcode">
+
+<label>
+<input type="checkbox" name="accept">
+Please keep me informed
+</label>
+
+<button type="submit">Submit</button>
+<button type="reset">Clear</button>
+
+</form>

@@ -1,0 +1,19 @@
+form {
+    background: #cde8c5;
+    padding: 2em;
+    width: 25em;
+    margin: 2em auto;
+    border: 2px solid green;
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+}
+
+button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background: green;
+    color: white;
+}

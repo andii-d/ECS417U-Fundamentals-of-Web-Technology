@@ -1,0 +1,84 @@
+/* login.css: login page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ==================
+   Login Page Content
+   ================== */
+.login-shell {
+    min-height: calc(100vh - 9rem);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 1rem;
+}
+
+/* Intro copy block at top of login page. */
+.login-intro {
+    padding: 0.25rem 0.1rem 0;
+}
+
+/* Split layout: form on left, helper notes on right (desktop). */
+.login-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 0.9rem;
+}
+
+/* Matching card surfaces for form and help panel. */
+.login-card,
+.login-help {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    background: rgba(244, 255, 248, 0.94);
+    box-shadow: var(--shadow-soft);
+    padding: 1rem;
+}
+
+/* Card headings use shared serif style with spacing normalization. */
+.login-card h2,
+.login-help h2 {
+    margin-bottom: 0.3rem;
+    color: var(--c-deep);
+}
+
+/* Core login form stack with shared field styling from styles.css. */
+.login-form {
+    margin-top: 0.85rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+/* Keeps action buttons slightly separated from final input field. */
+.form-actions {
+    margin-top: 0.2rem;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .login-shell {
+        min-height: auto;
+    }
+
+    .login-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .login-shell {
+        padding: 0.75rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}

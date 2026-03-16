@@ -1,0 +1,2439 @@
+--- FILE: index.html ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata for responsive rendering and tab title. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Portfolio Home</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (Phase 1 requirement) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- External JS only (for hamburger navigation behaviour) -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Skip link appears when focused and lets keyboard users bypass repeated nav. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Dedicated top header bar with clustered navigation -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <!-- Main site navigation (Phase 1 requirement) -->
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Primary site routes used across all portfolio pages. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- About section: intro copy, profile image, quick links, and decorative SVG background. -->
+        <section class="landing-shell" aria-labelledby="landing-title">
+            <!-- Decorative SVG overlay sits behind the main content and is hidden from assistive tech. -->
+            <svg
+                class="about-overlay"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid slice"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <defs>
+                    <!-- Gradient for line-work accents. -->
+                    <linearGradient id="about-overlay-line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8BAAAD" stop-opacity="0.35" />
+                        <stop offset="55%" stop-color="#4D4847" stop-opacity="0.2" />
+                        <stop offset="100%" stop-color="#1C3738" stop-opacity="0.28" />
+                    </linearGradient>
+
+                    <!-- Soft top-right glow layer. -->
+                    <radialGradient id="about-overlay-glow-gradient" cx="82%" cy="14%" r="72%">
+                        <stop offset="0%" stop-color="#8BAAAD" stop-opacity="0.22" />
+                        <stop offset="100%" stop-color="#F4FFF8" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+
+                <!-- Full-bleed glow background. -->
+                <rect width="100" height="100" fill="url(#about-overlay-glow-gradient)" />
+
+                <!-- Curved line accents. -->
+                <g fill="none" stroke="url(#about-overlay-line-gradient)" stroke-linecap="round">
+                    <path id="about-wave-main" d="M -10 66 C 10 52, 30 78, 52 60 S 95 34, 112 48" stroke-width="0.35" />
+                    <path id="about-wave-accent" d="M -20 72 C 6 58, 27 84, 48 66 S 86 40, 109 54" stroke-width="0.22" stroke-dasharray="0.7 1.8" opacity="0.8" />
+                </g>
+
+                <!-- Circular accents for depth. -->
+                <g fill="none" stroke="url(#about-overlay-line-gradient)">
+                    <circle id="about-ring-top-right" cx="80" cy="18" r="13" stroke-width="0.2" opacity="0.45" />
+                    <circle id="about-ring-bottom-left" cx="14" cy="86" r="9.5" stroke-width="0.18" opacity="0.3" />
+                </g>
+            </svg>
+
+            <!-- Introductory biography copy for home page context. -->
+            <article class="landing-copy">
+                <p class="kicker">About Me</p>
+                <h1 id="landing-title">Hello! I'm Andy!</h1>
+                <!-- Short lead paragraphs are intentionally split for easy scanning. -->
+                <p class="lead">
+                    I'm a Computer Science student at Queen Mary University of London.
+                </p>
+                <p class="lead">
+                    I build web scrapers and turn raw output into useful visualisations.
+                </p>
+                <p class="lead">
+                    I focus on Python and Flask, with backend work using tools such as Scrapling, NumPy, and Pandas.
+                </p>
+
+                <p class="lead">
+                    I also like to go to the gym, and have a particular interest for jewellery and fashion!
+                </p>
+            </article>
+
+            <!-- Profile image and contextual caption. -->
+            <figure class="landing-figure">
+                <div class="landing-figure-media">
+                    <img
+                        src="IMG_1794.JPG"
+                        alt="Me"
+                    >
+
+                    <!-- Invisible keyboard-accessible hotspot that reveals outfit links. -->
+                    <details class="bag-hotspot">
+                        <summary aria-label="Reveal Uniqlo bag items">
+                            <span class="sr-only">Reveal Uniqlo bag items</span>
+                        </summary>
+                        <div class="bag-hotspot-panel">
+                            <p class="bag-hotspot-title">In the Uniqlo bag:</p>
+                            <ul class="bag-items">
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E479816-000/00?colorDisplayCode=68&amp;sizeDisplayCode=034" target="_blank" rel="noopener noreferrer">Jeans (Blue, Straight Legged)</a></li>
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E450535-000/00?colorDisplayCode=36&amp;sizeDisplayCode=005" target="_blank" rel="noopener noreferrer">Merino Jumper (Red, Slim Fit)</a></li>
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E479235-000/00?colorDisplayCode=69&amp;sizeDisplayCode=005" target="_blank" rel="noopener noreferrer">Wool Jumper (Navy)</a></li>
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E482211-000/00?colorDisplayCode=09&amp;sizeDisplayCode=003" target="_blank" rel="noopener noreferrer">Jacket (Burgundy)</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+                <figcaption>
+                    Me
+                </figcaption>
+            </figure>
+
+            <!-- Social links use decorative SVG icons with accessible link labels. -->
+            <ul class="social-links" aria-label="Social profile links">
+                <li>
+                    <a
+                        class="social-link"
+                        href="https://github.com/andii-d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub profile"
+                    >
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/github.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="social-link"
+                        href="https://www.linkedin.com/in/andydishnica/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn profile"
+                    >
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/linkedin.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social-link" href="mailto:adishnica25@se25.qmul.ac.uk" aria-label="Email">
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/envelope.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <span class="sr-only">Email</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+--- END OF FILE ---
+--- FILE: aboutMe.html ---
+[File not found in workspace]
+--- END OF FILE ---
+--- FILE: skills.html ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata controls encoding and responsive viewport scaling. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Skills</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (reset + page-specific CSS) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="skills.css">
+
+    <!-- Shared mobile navigation script -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Skip link improves keyboard navigation and satisfies accessibility best practice. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared sticky header used consistently across all portfolio pages. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Consistent route map used by every page in the portfolio. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html" aria-current="page">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Skills page content: intro, legend, then category-based skill graph cards. -->
+    <main id="main-content" class="skills-shell">
+        <!-- Page intro sets context for how percentages should be interpreted. -->
+        <section class="skills-intro" aria-labelledby="skills-title">
+            <p class="kicker">Skills Graph</p>
+            <h1 id="skills-title">Technical Skills Overview</h1>
+            <p class="lead">
+                This page maps my current skill profile using projects, modules, and experience listed in my CV.
+            </p>
+        </section>
+
+        <!-- Shared legend keeps bar colour meaning consistent in every domain card. -->
+        <figure class="skills-scale">
+            <figcaption>Graph scale used across all skill bars</figcaption>
+            <!-- Legend labels map directly to score ranges in each progress bar row. -->
+            <ul class="legend-list">
+                <li class="legend-item"><span class="legend-dot advanced"></span>Advanced (80-100)</li>
+                <li class="legend-item"><span class="legend-dot working"></span>Working (65-79)</li>
+                <li class="legend-item"><span class="legend-dot familiar"></span>Familiar (50-64)</li>
+            </ul>
+        </figure>
+
+        <!-- Edit each row's --level value (0-100) to update a bar without changing CSS. -->
+        <section class="skills-grid" aria-label="Skill graph by category">
+            <!-- Languages used across coursework, scraping projects, and module work. -->
+            <article class="skill-domain">
+                <h2>Languages</h2>
+                <p class="skill-domain-note">Core coding languages used in coursework and projects.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-advanced" style="--level: 92">
+                        <div class="skill-row-top"><span class="skill-name">Python</span><span class="skill-score">92%</span></div>
+                        <p class="skill-note">Primary language for automation, scraping, and data tooling.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-advanced" style="--level: 82">
+                        <div class="skill-row-top"><span class="skill-name">SQL</span><span class="skill-score">82%</span></div>
+                        <p class="skill-note">Listed as proficient in CV and used for data querying.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 74">
+                        <div class="skill-row-top"><span class="skill-name">JavaScript</span><span class="skill-score">74%</span></div>
+                        <p class="skill-note">Used in the TikTok keyword analyser project interface.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 74">
+                        <div class="skill-row-top"><span class="skill-name">Java</span><span class="skill-score">74%</span></div>
+                        <p class="skill-note">Used in OOP coursework and my Typing Race Simulator project (ECS414U).</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 76">
+                        <div class="skill-row-top"><span class="skill-name">HTML &amp; CSS</span><span class="skill-score">76%</span></div>
+                        <p class="skill-note">Used for portfolio and project frontend structure/styling.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Libraries/frameworks that power automation, analysis, and data workflows. -->
+            <article class="skill-domain">
+                <h2>Frameworks &amp; Libraries</h2>
+                <p class="skill-domain-note">Tools explicitly used in CV-listed projects.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-advanced" style="--level: 90">
+                        <div class="skill-row-top"><span class="skill-name">Scrapling</span><span class="skill-score">90%</span></div>
+                        <p class="skill-note">Browser automation in scraping workflows.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 73">
+                        <div class="skill-row-top"><span class="skill-name">NetworkX</span><span class="skill-score">73%</span></div>
+                        <p class="skill-note">Graph-based keyword relationship analysis.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 74">
+                        <div class="skill-row-top"><span class="skill-name">NumPy / SciPy</span><span class="skill-score">74%</span></div>
+                        <p class="skill-note">Data shaping and numeric processing in analysis steps.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 66">
+                        <div class="skill-row-top"><span class="skill-name">Cryptography (Fernet)</span><span class="skill-score">66%</span></div>
+                        <p class="skill-note">Encryption implementation in password manager project.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 78">
+                        <div class="skill-row-top"><span class="skill-name">Graph centrality methods</span><span class="skill-score">78%</span></div>
+                        <p class="skill-note">Used to rank keyword importance from scraped datasets.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Module-specific card: evidence of web-tech learning outcomes. -->
+            <article class="skill-domain">
+                <h2>Module Reinforcement: Fundamentals of Web Technology</h2>
+                <p class="skill-domain-note">This module directly strengthens my existing web stack with frontend and server-side foundations.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-advanced" style="--level: 81">
+                        <div class="skill-row-top"><span class="skill-name">HTML semantics &amp; accessibility</span><span class="skill-score">81%</span></div>
+                        <p class="skill-note">Semantic structure, clear headings, and accessibility-first markup.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-advanced" style="--level: 80">
+                        <div class="skill-row-top"><span class="skill-name">CSS layout systems (Flexbox/Grid)</span><span class="skill-score">80%</span></div>
+                        <p class="skill-note">Responsive layout patterns used across this portfolio project.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 76">
+                        <div class="skill-row-top"><span class="skill-name">JavaScript interactivity</span><span class="skill-score">76%</span></div>
+                        <p class="skill-note">Client-side behaviour such as navigation toggles and UI controls.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-familiar" style="--level: 62">
+                        <div class="skill-row-top"><span class="skill-name">PHP fundamentals</span><span class="skill-score">62%</span></div>
+                        <p class="skill-note">Early backend foundations for dynamic page workflows.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Module-specific card: evidence of OOP reinforcement. -->
+            <article class="skill-domain">
+                <h2>Module Reinforcement: Java OOP</h2>
+                <p class="skill-domain-note">The Java OOP module expands core software design skills and type-safe coding habits.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-working" style="--level: 79">
+                        <div class="skill-row-top"><span class="skill-name">Object-oriented design in Java</span><span class="skill-score">79%</span></div>
+                        <p class="skill-note">Encapsulation, inheritance, polymorphism, and class design in Typist/TypingRace modelling.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 72">
+                        <div class="skill-row-top"><span class="skill-name">Generic types</span><span class="skill-score">72%</span></div>
+                        <p class="skill-note">Type-safe abstractions and reusable data structures.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 69">
+                        <div class="skill-row-top"><span class="skill-name">Git CLI workflow</span><span class="skill-score">69%</span></div>
+                        <p class="skill-note">Branching, commits, and controlled collaboration from terminal tools.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 75">
+                        <div class="skill-row-top"><span class="skill-name">Algorithmic problem decomposition</span><span class="skill-score">75%</span></div>
+                        <p class="skill-note">Applied in race-turn logic, burnout handling, and bug-fix tasks in the simulator.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <!-- Shared footer for visual consistency and clear page ending landmark. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+--- END OF FILE ---
+--- FILE: education.html ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata and page title for browser/UI context. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Education</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (reset + page-specific CSS) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="education.css">
+
+    <!-- Shared mobile navigation script -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Accessibility shortcut to jump directly to page content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared navigation header keeps movement between pages consistent. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Shared page links keep navigation structure predictable. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html" aria-current="page">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Education content: intro, two key stages, and current learning focus. -->
+    <main id="main-content" class="page-shell">
+        <!-- Intro block summarises this page for assessors and recruiters. -->
+        <section class="page-intro" aria-labelledby="education-title">
+            <p class="kicker">Education</p>
+            <h1 id="education-title">Academic Journey</h1>
+            <p class="lead">
+                My current path combines a strong computer science foundation with analytical training from A Levels.
+            </p>
+        </section>
+
+        <!-- Two-card timeline layout for current degree and prior qualifications. -->
+        <section class="edu-grid" aria-label="Education timeline">
+            <!-- Current university study card. -->
+            <article class="edu-card">
+                <header class="edu-card-header">
+                    <h2>Queen Mary University of London</h2>
+                    <p class="edu-location">London, Mile End</p>
+                    <p class="edu-dates">September 2025 - June 2028 (expected)</p>
+                </header>
+
+                <p class="edu-award">BSc Computer Science</p>
+                <h3>Current module areas</h3>
+                <ul class="edu-list">
+                    <li>Procedural Programming (Java)</li>
+                    <li>Computer Systems and Networks</li>
+                    <li>Logic and Discrete Structures</li>
+                </ul>
+            </article>
+
+            <!-- Previous school and A-Level outcomes card. -->
+            <article class="edu-card">
+                <header class="edu-card-header">
+                    <h2>Ashmole Academy</h2>
+                    <p class="edu-location">London, Barnet</p>
+                    <p class="edu-dates">September 2023 - June 2025</p>
+                </header>
+
+                <p class="edu-award">A Levels</p>
+                <ul class="edu-list">
+                    <li>Mathematics: A</li>
+                    <li>Computer Science: B</li>
+                    <li>Economics: B</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Current development focus links education to portfolio project work. -->
+        <section class="edu-notes" aria-labelledby="edu-focus-title">
+            <h2 id="edu-focus-title">Learning focus</h2>
+            <p class="lead">
+                I am learning how to efficiently web scrape and analyse the data using Python, with a focus on building end-to-end pipeline that can be applied to real-world data collection and analysis tasks.
+            </p>
+        </section>
+    </main>
+
+    <!-- Shared footer creates a clear page boundary and consistent branding. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+--- END OF FILE ---
+--- FILE: portfolio.html ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata for encoding, viewport, and browser title bar. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Portfolio</title>
+
+    <!-- Shared typography family pairing used across portfolio pages. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Nunito+Sans:wght@400;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Global reset and page-specific styling. -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="portfolio.css">
+
+    <!-- Navigation behaviour script (hamburger menu + dismiss logic). -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Accessibility skip target for keyboard users. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared portfolio navigation header. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Reused global navigation route list. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portfolio repository showcase content. -->
+    <main id="main-content" class="portfolio-shell">
+        <!-- Introductory context for assessors/recruiters reading this page. -->
+        <section class="portfolio-intro" aria-labelledby="portfolio-title">
+            <p class="kicker">Portfolio</p>
+            <h1 id="portfolio-title">Repository Showcase</h1>
+            <p class="lead">
+                A curated collection of projects with screenshots, repository links, and short writeups.
+            </p>
+        </section>
+
+        <!-- Two-column feature layout: main project left, supporting projects stacked right. -->
+        <section class="project-grid" aria-label="Project cards">
+            <!-- Featured project card with screenshot and extended description. -->
+            <article class="project-card project-card-main">
+                <figure class="project-figure">
+                    <!-- Current available project screenshot (Gephi export). -->
+                    <img
+                        class="project-image"
+                        src="gephi.png"
+                        alt="Gephi network graph generated from hashtag co-occurrence analysis"
+                    >
+                    <figcaption>Most recent Gephi output from the TikTok-Web-Scraper pipeline.</figcaption>
+                </figure>
+                <div class="project-copy">
+                    <h2>TikTok Web Scraper &amp; FMCG Analysis Pipeline</h2>
+                    <p class="project-description">
+                        Multi-platform trend intelligence system that scrapes TikTok, Twitter, and Reddit, then runs analytics for momentum,
+                        platform consensus, and product-opportunity discovery. The pipeline also builds hashtag co-occurrence graphs in GEXF for Gephi visualisation.
+                    </p>
+                    <p class="project-tech">Tech: Python, Flask, Pandas, NumPy, NetworkX, Selenium, Zendriver, OpenAI API</p>
+                    <!-- Repository visibility badge shown instead of a public URL link. -->
+                    <span class="project-private-badge" aria-label="Private repository">Private repository</span>
+                </div>
+            </article>
+
+            <!-- Secondary project column: compact stacked cards for additional work. -->
+            <div class="project-stack">
+                <!-- Supporting project: hackathon note taker. -->
+                <article class="project-card project-card-side">
+                    <div class="project-copy">
+                        <h2>First-Year Hackathon Note Taker</h2>
+                        <p class="project-description">
+                            A note-taking web application built for a first-year hackathon, designed to support users who need structured help with creating and managing notes.
+                            The project includes account flows and persisted note data using a local database.
+                        </p>
+                        <p class="project-tech">Tech: Python, Reflex, SQLite, bcrypt, Regex validation</p>
+                        <a class="project-link" href="https://github.com/thekuddlekoala/First-Year-Hackathon--Note-Taker" target="_blank" rel="noopener noreferrer">Repository link</a>
+                    </div>
+                </article>
+
+                <!-- Supporting project: GCSE music quiz system. -->
+                <article class="project-card project-card-side">
+                    <div class="project-copy">
+                        <h2>GCSE NEA Music Quiz</h2>
+                        <p class="project-description">
+                            A command-line music quiz system built around registration, login, score tracking, and leaderboard ranking.
+                            Song prompts are loaded from text datasets and randomized to create a replayable quiz flow.
+                        </p>
+                        <p class="project-tech">Tech: Python, OOP, Text-file data storage, Randomisation, Regex parsing</p>
+                        <a class="project-link" href="https://github.com/andii-d/nea-project" target="_blank" rel="noopener noreferrer">Repository link</a>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Shared footer branding. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+--- END OF FILE ---
+--- FILE: login.html ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata and title for this authentication page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Login</title>
+
+    <!-- Shared typography used across all Phase 1 pages. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Nunito+Sans:wght@400;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Reset first, then page-specific styles for predictable layout behaviour. -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="login.css">
+
+    <!-- External JS only: controls the responsive navigation menu state. -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Keyboard accessibility shortcut for skipping repeated navigation. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared top navigation shell used by the full portfolio site. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Global page links for consistent movement across the site. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html" aria-current="page">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login page main content area. -->
+    <main id="main-content" class="login-shell">
+        <!-- Intro copy explains purpose of this page in the blog workflow. -->
+        <section class="login-intro" aria-labelledby="login-title">
+            <p class="kicker">Blog Access</p>
+            <h1 id="login-title">Welcome back</h1>
+            <p class="lead">
+                Log in to add or manage portfolio blog entries.
+            </p>
+        </section>
+
+        <!-- Form panel: simple login form with HTML5 validation. -->
+        <section class="login-panel" aria-label="Login area">
+            <article class="login-card">
+                <h2>Sign in</h2>
+                <p class="form-note">Please use your registered email address and password.</p>
+
+                <form class="login-form" action="addEntry.html" method="post">
+                    <!-- HTML5 email input provides built-in type + required validation. -->
+                    <div class="form-field">
+                        <label for="login-email">Email address</label>
+                        <input
+                            id="login-email"
+                            name="email"
+                            type="email"
+                            placeholder="name@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <!-- Password field requires at least 8 characters via minlength. -->
+                    <div class="form-field">
+                        <label for="login-password">Password</label>
+                        <input
+                            id="login-password"
+                            name="password"
+                            type="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <!-- Primary and secondary actions for form submit/reset. -->
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Log In</button>
+                        <button class="btn btn-secondary" type="reset">Clear</button>
+                    </div>
+                </form>
+            </article>
+
+            <!-- Side notes help during assessor walkthroughs and demos. -->
+            <aside class="login-help">
+                <h2>Quick notes</h2>
+                <ul class="help-list">
+                    <li>Use your QMUL email account for assessor demos.</li>
+                    <li>After successful login, the Add Entry page should be available.</li>
+                    <li>Use Clear to quickly reset both form fields.</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Shared footer branding. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+--- END OF FILE ---
+--- FILE: addEntry.html ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata and page title for Add Entry screen. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Add Entry</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (reset + page-specific CSS) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="addEntry.css">
+
+    <!-- Shared mobile navigation script -->
+    <script src="nav-menu.js" defer></script>
+    <!-- Entry-form interaction script (clear confirmation + required post checks). -->
+    <script src="add-entry.js" defer></script>
+</head>
+<body>
+    <!-- Accessibility shortcut: skip repeated navigation and jump to the form. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared top navigation used across all pages for consistent routing. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Global nav links reused from other pages. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html" aria-current="page">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main editor shell: intro plus two-column form/help layout. -->
+    <main id="main-content" class="entry-shell">
+        <!-- Intro explains the purpose of this page and validation approach. -->
+        <section class="entry-intro" aria-labelledby="entry-title">
+            <p class="kicker">Blog Editor</p>
+            <h1 id="entry-title">Create a blog entry</h1>
+            <p class="lead">
+                Add a new post with clear metadata, a concise summary, and structured content. Fields below include HTML5 validation for clean input.
+            </p>
+        </section>
+
+        <section class="entry-layout" aria-label="Entry editor">
+            <article class="entry-card">
+                <h2>Entry form</h2>
+                <p class="form-note">Required fields are marked by browser validation.</p>
+
+                <!--
+                    Phase 1 frontend form:
+                    - Uses HTML5 validation attributes.
+                    - JS (add-entry.js) handles clear confirmation and title/body guard checks.
+                -->
+                <form id="entry-form" class="entry-form" action="portfolio.html" method="post">
+                    <!-- Row 1: title + slug identify the entry. -->
+                    <div class="field-row">
+                        <div class="form-field">
+                            <label for="entry-title-input">Title</label>
+                            <input
+                                id="entry-title-input"
+                                name="title"
+                                type="text"
+                                placeholder="e.g. Building a keyword analyser"
+                                minlength="5"
+                                maxlength="90"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="entry-slug">Slug</label>
+                            <input
+                                id="entry-slug"
+                                name="slug"
+                                type="text"
+                                placeholder="keyword-analyser-project"
+                                pattern="[a-z0-9-]+"
+                                title="Use lowercase letters, numbers, and hyphens only."
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Row 2: category and publication date metadata. -->
+                    <div class="field-row">
+                        <div class="form-field">
+                            <label for="entry-category">Category</label>
+                            <select id="entry-category" name="category" required>
+                                <option value="">Choose a category</option>
+                                <option value="project">Project</option>
+                                <option value="education">Education</option>
+                                <option value="skills">Skills</option>
+                                <option value="work">Work Experience</option>
+                                <option value="general">General</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="entry-date">Publish date</label>
+                            <input id="entry-date" name="publishDate" type="date" required>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: estimated reading time and optional external reference. -->
+                    <div class="field-row">
+                        <div class="form-field">
+                            <label for="entry-read-time">Estimated read time (minutes)</label>
+                            <input id="entry-read-time" name="readTime" type="number" min="1" max="60" step="1" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="entry-url">Reference URL (optional)</label>
+                            <input
+                                id="entry-url"
+                                name="referenceUrl"
+                                type="url"
+                                placeholder="https://example.com/source"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Short preview text used for cards/listing contexts. -->
+                    <div class="form-field">
+                        <label for="entry-summary">Summary</label>
+                        <textarea
+                            id="entry-summary"
+                            name="summary"
+                            rows="3"
+                            minlength="30"
+                            maxlength="220"
+                            placeholder="Write a short summary for preview cards."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- Full post body text area (main article content). -->
+                    <div class="form-field">
+                        <label for="entry-body">Main content</label>
+                        <textarea
+                            id="entry-body"
+                            name="post"
+                            rows="10"
+                            minlength="120"
+                            placeholder="Write your full entry content here..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- Publication controls grouped semantically in a fieldset. -->
+                    <fieldset class="entry-options">
+                        <legend>Publishing options</legend>
+                        <div class="option-row">
+                            <p class="option-label">Visibility</p>
+                            <label class="inline-option" for="visibility-public">
+                                <input id="visibility-public" type="radio" name="visibility" value="public" required checked>
+                                Public
+                            </label>
+                            <label class="inline-option" for="visibility-private">
+                                <input id="visibility-private" type="radio" name="visibility" value="private" required>
+                                Private
+                            </label>
+                        </div>
+
+                        <div class="option-row">
+                            <label class="inline-option" for="entry-featured">
+                                <input id="entry-featured" type="checkbox" name="featured">
+                                Mark as featured
+                            </label>
+                            <label class="inline-option" for="entry-comments">
+                                <input id="entry-comments" type="checkbox" name="allowComments" checked>
+                                Allow comments
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Optional taxonomy tags to support filtering/search later. -->
+                    <div class="form-field">
+                        <label for="entry-tags">Tags (comma separated)</label>
+                        <input
+                            id="entry-tags"
+                            name="tags"
+                            type="text"
+                            placeholder="python, scraping, visualisation"
+                            pattern="[A-Za-z0-9 ,#-]+"
+                            title="Use letters, numbers, spaces, commas, # and hyphens."
+                        >
+                    </div>
+
+                    <!-- Submit posts the form; Clear uses JS confirmation flow. -->
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Post</button>
+                        <button id="entry-clear-button" class="btn btn-secondary" type="button">Clear</button>
+                    </div>
+                </form>
+            </article>
+
+            <!-- Quick checklist supports demos and keeps post quality consistent. -->
+            <aside class="entry-help">
+                <h2>Writing checklist</h2>
+                <ul class="help-list">
+                    <li>Use a clear title and category so posts stay organised.</li>
+                    <li>Keep summary short; reserve deeper detail for main content.</li>
+                    <li>Add one external reference if your entry is research-based.</li>
+                    <li>Use tags to improve filtering on your portfolio page.</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Shared footer keeps visual rhythm consistent between pages. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+--- END OF FILE ---
+--- FILE: addEntry.css ---
+/* addEntry.css: add-entry page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ======================
+   Add Entry Page Content
+   ====================== */
+.entry-shell {
+    min-height: calc(100vh - 9rem);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 1rem;
+}
+
+/* Intro copy at top of editor page. */
+.entry-intro {
+    padding: 0.2rem 0.1rem 0;
+}
+
+/* Allow longer intro paragraph line length on this text-heavy page. */
+.lead {
+    max-width: 66ch;
+}
+
+/* Desktop layout: wide form column + narrower checklist column. */
+.entry-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 0.9rem;
+}
+
+/* Consistent card styling for editor form and sidebar checklist. */
+.entry-card,
+.entry-help {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    background: rgba(244, 255, 248, 0.94);
+    box-shadow: var(--shadow-soft);
+    padding: 1rem;
+}
+
+/* Card headings. */
+.entry-card h2,
+.entry-help h2 {
+    margin-bottom: 0.28rem;
+    color: var(--c-deep);
+}
+
+/* Vertical rhythm between field groups. */
+.entry-form {
+    display: grid;
+    gap: 0.82rem;
+}
+
+/* Pair related fields side-by-side to reduce vertical scrolling. */
+.field-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.72rem;
+}
+
+/* Grouped publishing options (radio/checkbox controls). */
+.entry-options {
+    border: 1px dashed var(--c-soft);
+    border-radius: 0.6rem;
+    padding: 0.62rem 0.68rem 0.68rem;
+    display: grid;
+    gap: 0.62rem;
+}
+
+/* Fieldset legend acts as a mini-section title. */
+.entry-options legend {
+    font-weight: 700;
+    color: var(--c-deep);
+    padding: 0 0.28rem;
+}
+
+/* Layout for grouped radio/checkbox options. */
+.option-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.72rem;
+}
+
+.option-label {
+    font-weight: 700;
+    color: var(--c-deep);
+}
+
+/* Label + control alignment for inline options. */
+.inline-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.36rem;
+    color: var(--c-muted);
+}
+
+/* JS-applied state for missing title/post fields. */
+.form-field .field-error {
+    border-color: #b42318;
+    background: #fff4f2;
+}
+
+.form-field .field-error:focus-visible {
+    box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.22);
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .entry-shell {
+        min-height: auto;
+    }
+
+    .entry-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .entry-shell {
+        padding: 0.75rem;
+    }
+
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}
+
+--- END OF FILE ---
+--- FILE: education.css ---
+/* education.css: education page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ======================
+   Education Page Layout
+   ====================== */
+.page-shell {
+    display: grid;
+    gap: 0.85rem;
+}
+
+/* Card styling shared by intro, timeline cards, and focus notes. */
+.page-intro,
+.edu-card,
+.edu-notes {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+}
+
+.page-intro {
+    padding: 0.95rem;
+}
+
+/* Two-column timeline on desktop; collapses to one column on smaller screens. */
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+/* Individual education card layout and spacing. */
+.edu-card {
+    padding: 0.95rem;
+    display: grid;
+    gap: 0.6rem;
+}
+
+/* Institution name prominence for quick scanning. */
+.edu-card-header h2 {
+    font-size: 1.22rem;
+}
+
+/* Location metadata line. */
+.edu-location {
+    margin-top: 0.25rem;
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+/* Date range line shown under location. */
+.edu-dates {
+    margin-top: 0.15rem;
+    color: var(--c-muted);
+    font-size: 0.92rem;
+}
+
+/* Qualification label such as degree / A Levels. */
+.edu-award {
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+/* Subheading used before module/subject list blocks. */
+.edu-card h3 {
+    font-size: 0.95rem;
+    color: var(--c-muted);
+}
+
+/* Vertical list rhythm for modules/grades. */
+.edu-list {
+    margin: 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 0.25rem;
+}
+
+/* Re-introduce bullets because reset.css removes default list markers globally. */
+.edu-list li {
+    list-style: disc;
+    color: var(--c-muted);
+}
+
+/* Closing notes panel links study history with current technical focus. */
+.edu-notes {
+    padding: 0.95rem;
+}
+
+.edu-notes h2 {
+    font-size: 1.26rem;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+--- END OF FILE ---
+--- FILE: index.css ---
+/* index.css: home page styles (imports shared design system) */
+@import url("styles.css");
+
+/* =================
+   Home Page Content
+   ================= */
+/* Keep intro paragraphs from stretching too wide for comfortable reading. */
+.lead {
+    max-width: 50ch;
+}
+
+/* Main two-column hero layout (bio copy + image) plus bottom social row. */
+.landing-shell {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "copy figure"
+        "social social";
+    gap: 0.85rem;
+    align-items: stretch;
+    min-height: calc(100vh - 9rem);
+    margin-bottom: 1rem;
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Decorative SVG overlay that sits behind text/image content. */
+.about-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.82;
+}
+
+/* Content layers sit above the decorative overlay. */
+.landing-copy,
+.landing-figure {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0.85rem;
+    box-shadow: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left column copy is vertically centered in the hero shell. */
+.landing-copy {
+    grid-area: copy;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 1.2rem;
+    padding-bottom: 0.42rem;
+}
+
+/* Invisible, keyboard-focusable image hotspot. */
+.bag-hotspot {
+    position: absolute;
+    top: 68%;
+    right: 15%;
+    z-index: 3;
+}
+
+/* Summary creates a clickable but visually invisible hotspot region. */
+.bag-hotspot summary {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 0.18rem;
+    background: transparent;
+    outline: none;
+}
+
+.bag-hotspot summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Focus ring helps keyboard users discover the hotspot target area. */
+.bag-hotspot summary:focus-visible {
+    outline: 2px solid rgba(139, 170, 173, 0.85);
+    outline-offset: 2px;
+}
+
+/* Popover-style info panel shown when <details> is open. */
+.bag-hotspot-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.42rem);
+    right: 0;
+    width: min(18rem, 70vw);
+    padding: 0.46rem 0.6rem;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.58rem;
+    background: rgba(244, 255, 248, 0.96);
+    box-shadow: var(--shadow-soft);
+}
+
+.bag-hotspot[open] .bag-hotspot-panel {
+    display: block;
+}
+
+/* Panel heading and list typography. */
+.bag-hotspot-title {
+    margin: 0 0 0.35rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--c-deep);
+}
+
+.bag-items {
+    margin: 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 0.26rem;
+}
+
+/* Link colour styling inside the hotspot panel. */
+.bag-items a {
+    color: var(--c-deep);
+    text-underline-offset: 0.14em;
+}
+
+.bag-items a:hover,
+.bag-items a:focus-visible {
+    color: var(--c-muted);
+}
+
+/* Social icon row spans full width beneath hero content. */
+.social-links {
+    grid-area: social;
+    align-self: end;
+    margin: 0;
+    padding: 0 0.85rem 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Circular icon buttons with subtle hover lift. */
+.social-link {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid var(--c-soft);
+    background: rgba(139, 170, 173, 0.16);
+    color: var(--c-deep);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    transform: translateY(-1px);
+    background: var(--c-soft);
+    border-color: var(--c-muted);
+}
+
+.social-link img {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+}
+
+/* Wrapper around portrait image so overlay controls can be positioned absolutely. */
+.landing-figure-media {
+    width: 120%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Fixed image framing keeps portrait ratio visually consistent. */
+.landing-figure-media img {
+    width: 100%;
+    min-height: 290px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.landing-figure {
+    grid-area: figure;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Caption centered below the figure media. */
+.landing-figure figcaption {
+    width: 100%;
+    margin-top: 0.55rem;
+    color: var(--c-muted);
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .landing-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "copy"
+            "figure"
+            "social";
+        min-height: auto;
+    }
+
+    .landing-copy {
+        padding-bottom: 1.2rem;
+    }
+
+    .social-links {
+        padding: 0 0.85rem 0.55rem;
+    }
+
+    .landing-figure-media img {
+        min-height: 220px;
+    }
+}
+
+--- END OF FILE ---
+--- FILE: login.css ---
+/* login.css: login page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ==================
+   Login Page Content
+   ================== */
+.login-shell {
+    min-height: calc(100vh - 9rem);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 1rem;
+}
+
+/* Intro copy block at top of login page. */
+.login-intro {
+    padding: 0.25rem 0.1rem 0;
+}
+
+/* Split layout: form on left, helper notes on right (desktop). */
+.login-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 0.9rem;
+}
+
+/* Matching card surfaces for form and help panel. */
+.login-card,
+.login-help {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    background: rgba(244, 255, 248, 0.94);
+    box-shadow: var(--shadow-soft);
+    padding: 1rem;
+}
+
+/* Card headings use shared serif style with spacing normalization. */
+.login-card h2,
+.login-help h2 {
+    margin-bottom: 0.3rem;
+    color: var(--c-deep);
+}
+
+/* Core login form stack with shared field styling from styles.css. */
+.login-form {
+    margin-top: 0.85rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+/* Keeps action buttons slightly separated from final input field. */
+.form-actions {
+    margin-top: 0.2rem;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .login-shell {
+        min-height: auto;
+    }
+
+    .login-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .login-shell {
+        padding: 0.75rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}
+
+--- END OF FILE ---
+--- FILE: portfolio.css ---
+/* portfolio.css: portfolio page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ======================
+   Portfolio Page Content
+   ====================== */
+.portfolio-shell {
+    min-height: calc(100vh - 9rem);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 1rem;
+}
+
+/* Intro block remains lightweight because cards carry most detail. */
+.portfolio-intro {
+    padding: 0.25rem 0.1rem 0;
+}
+
+/* Wider measure for project descriptions than default .lead width. */
+.lead {
+    max-width: 70ch;
+}
+
+/* Desktop layout: featured project + supporting project stack. */
+.project-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+    gap: 0.9rem;
+    align-items: start;
+}
+
+/* Right column stacks supporting projects vertically beside the featured card. */
+.project-stack {
+    display: grid;
+    gap: 0.9rem;
+    align-content: start;
+}
+
+/* Shared project card surface and spacing. */
+.project-card {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    background: rgba(244, 255, 248, 0.94);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    display: grid;
+    align-content: start;
+}
+
+/* Featured card stretches to align with right-column stack height. */
+.project-card-main {
+    height: 100%;
+}
+
+/* Slightly tighter spacing for short text-only side cards. */
+.project-card-side .project-copy {
+    gap: 0.35rem;
+}
+
+/* Figure wrapper for screenshot + caption. */
+.project-figure {
+    padding: 0.75rem 0.75rem 0.35rem;
+}
+
+/* Screenshot sizing keeps large visual anchor on desktop. */
+.project-image {
+    width: 100%;
+    min-height: 10.5rem;
+    height: clamp(15rem, 31vw, 22rem);
+    border: 1px solid rgba(139, 170, 173, 0.35);
+    border-radius: 0.65rem;
+    object-fit: cover;
+    background: rgba(139, 170, 173, 0.08);
+}
+
+.project-figure figcaption {
+    margin-top: 0.45rem;
+    color: var(--c-muted);
+    font-size: 0.9rem;
+}
+
+/* Text content layout inside each card. */
+.project-copy {
+    padding: 0.35rem 0.75rem 0.85rem;
+    display: grid;
+    gap: 0.42rem;
+}
+
+.project-copy h2 {
+    color: var(--c-deep);
+}
+
+.project-description,
+.project-tech {
+    color: var(--c-muted);
+}
+
+/* CTA-style repository link for public projects. */
+.project-link {
+    margin-top: 0.18rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: rgba(139, 170, 173, 0.18);
+    color: var(--c-deep);
+    font-weight: 700;
+    padding: 0.48rem 0.75rem;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    background: rgba(139, 170, 173, 0.3);
+    border-color: var(--c-muted);
+    transform: translateY(-1px);
+}
+
+/* Non-interactive badge used when a repository is private/unavailable. */
+.project-private-badge {
+    margin-top: 0.18rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    border: 1px solid rgba(77, 72, 71, 0.3);
+    border-radius: 0.55rem;
+    background: rgba(77, 72, 71, 0.12);
+    color: var(--c-muted);
+    font-weight: 700;
+    padding: 0.48rem 0.75rem;
+    cursor: default;
+    user-select: none;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .portfolio-shell {
+        min-height: auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card-main {
+        height: auto;
+    }
+
+    .project-image {
+        height: 13.5rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .portfolio-shell {
+        padding: 0.75rem;
+    }
+}
+
+--- END OF FILE ---
+--- FILE: reset.css ---
+/* =========================================
+   reset.css
+   Global baseline reset for the portfolio.
+   ========================================= */
+
+/* Remove default spacing and force predictable box sizing for all elements. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the document can expand to the full viewport height. */
+html,
+body {
+    min-height: 100%;
+}
+
+/* Apply baseline text rendering improvements and default line rhythm. */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Explicit reset for HTML5 semantic layout elements used across the portfolio. */
+header,
+nav,
+main,
+section,
+article,
+figure,
+figcaption,
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+/* Keep media elements block-level and responsive by default. */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Ensure form controls inherit typography from surrounding content. */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove default list bullets/numbers so pages can define their own markers intentionally. */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default link decoration; link styles are handled in shared/page CSS files. */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+--- END OF FILE ---
+--- FILE: skills.css ---
+/* skills.css: skills page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ==================
+   Skill Color Tokens
+   ================== */
+:root {
+    --c-advanced: #1f6f78;
+    --c-working: #4d8e94;
+    --c-familiar: #7fa8ab;
+}
+
+/* ============
+   Skills Layout
+   ============ */
+.skills-shell {
+    min-height: calc(100vh - 9rem);
+    display: grid;
+    gap: 0.85rem;
+}
+
+/* Shared panel surface used for intro, legend, and every skills domain card. */
+.skills-intro,
+.skills-scale,
+.skill-domain {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+}
+
+.skills-intro {
+    padding: 1rem;
+}
+
+/* Scale legend explaining score-band colours. */
+.skills-scale {
+    padding: 0.8rem 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.skills-scale figcaption {
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+/* Horizontal legend list wraps on narrow screens. */
+.legend-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    color: var(--c-muted);
+    font-size: 0.9rem;
+}
+
+/* Colour indicator dots used in legend rows. */
+.legend-dot {
+    width: 0.72rem;
+    height: 0.72rem;
+    border-radius: 50%;
+}
+
+.legend-dot.advanced {
+    background: var(--c-advanced);
+}
+
+.legend-dot.working {
+    background: var(--c-working);
+}
+
+.legend-dot.familiar {
+    background: var(--c-familiar);
+}
+
+/* Two-column card grid on desktop. */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+/* Each domain card groups one skill family (title, context note, bars). */
+.skill-domain {
+    padding: 0.95rem;
+    display: grid;
+    gap: 0.62rem;
+}
+
+/* Card title and supporting note text. */
+.skill-domain h2 {
+    font-size: 1.18rem;
+}
+
+.skill-domain-note {
+    color: var(--c-muted);
+    font-size: 0.9rem;
+}
+
+/* List wrapper for per-skill rows. */
+.skill-bars {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+}
+
+/* Skill rows use --level (0-100) from inline style to drive fill width. */
+.skill-row {
+    --level: 50;
+    border: 1px solid rgba(139, 170, 173, 0.42);
+    border-radius: 0.65rem;
+    background: rgba(139, 170, 173, 0.08);
+    padding: 0.55rem 0.6rem;
+}
+
+/* Name + score row at top of each bar item. */
+.skill-row-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.55rem;
+}
+
+.skill-name {
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+.skill-score {
+    color: var(--c-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.skill-note {
+    margin-top: 0.15rem;
+    color: var(--c-muted);
+    font-size: 0.84rem;
+}
+
+/* Track and fill for percentage visualisation. */
+.skill-meter {
+    margin-top: 0.35rem;
+    width: 100%;
+    height: 0.44rem;
+    border-radius: 999px;
+    background: rgba(139, 170, 173, 0.28);
+    overflow: hidden;
+}
+
+.skill-fill {
+    display: block;
+    height: 100%;
+    width: calc(var(--level) * 1%);
+    border-radius: inherit;
+    background: var(--c-working);
+}
+
+/* Gradient variants by skill confidence tier. */
+.skill-row.skill-advanced .skill-fill {
+    background: linear-gradient(90deg, #2a7f88 0%, #1f6f78 100%);
+}
+
+.skill-row.skill-working .skill-fill {
+    background: linear-gradient(90deg, #6ea5a9 0%, #4d8e94 100%);
+}
+
+.skill-row.skill-familiar .skill-fill {
+    background: linear-gradient(90deg, #9ec0c2 0%, #7fa8ab 100%);
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .skills-shell {
+        min-height: auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .skills-intro,
+    .skills-scale,
+    .skill-domain {
+        padding: 0.75rem;
+    }
+}
+
+--- END OF FILE ---
+--- FILE: styles.css ---
+/* styles.css: shared design system for all portfolio pages.
+   Every page-level stylesheet imports this file first, then adds page-specific rules. */
+
+/* =============================
+   Colour System and Core Tokens
+   ============================= */
+:root {
+    --c-ink: #000f08;
+    --c-deep: #1c3738;
+    --c-muted: #4d4847;
+    --c-paper: #f4fff8;
+    --c-soft: #8baaad;
+
+    --radius-lg: 18px;
+    --radius-md: 14px;
+    --shadow-soft: 0 8px 18px rgba(28, 55, 56, 0.08);
+}
+
+/* ===========
+   Base Layout
+   =========== */
+body {
+    margin: 0;
+    padding: 0.3rem 1cm 0.6rem;
+    background: var(--c-paper);
+    color: var(--c-ink);
+    font-family: "Nunito Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Merriweather", serif;
+    line-height: 1.2;
+}
+
+main {
+    margin-top: 0.75rem;
+}
+
+/* ======================
+   Accessibility Helpers
+   ====================== */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--c-deep);
+    color: var(--c-paper);
+
+    border-radius: 0 0 0.45rem 0.45rem;
+}
+
+.skip-link:focus {
+    left: 0.75rem;
+    z-index: 30;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ======================
+   Header and Navigation
+   ====================== */
+.nav-header {
+    position: sticky;
+    top: 0.42rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding: 0.55rem 0.85rem;
+    background: var(--c-paper);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    box-shadow: 0 6px 14px rgba(28, 55, 56, 0.08);
+}
+
+.site-mark {
+    padding-left: 0.3rem;
+    font-family: "Merriweather", serif;
+    font-size: 1.26rem;
+    font-weight: 700;
+    color: var(--c-muted);
+    white-space: nowrap;
+}
+
+.site-nav {
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.4rem;
+}
+
+.site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem;
+}
+
+.site-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: var(--c-paper);
+    color: var(--c-muted);
+    font-weight: 700;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a[aria-current="page"] {
+    background: rgba(139, 170, 173, 0.2);
+    border-color: var(--c-muted);
+    color: var(--c-deep);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    background: rgba(139, 170, 173, 0.2);
+    border-color: var(--c-muted);
+    color: var(--c-deep);
+}
+
+/* Hamburger trigger shown only when JS marks nav as collapsible. */
+.nav-toggle {
+    display: none;
+    width: 2.35rem;
+    height: 2.15rem;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: var(--c-paper);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.18rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+    background: rgba(139, 170, 173, 0.2);
+    border-color: var(--c-muted);
+}
+
+.nav-toggle-bar {
+    width: 1rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--c-muted);
+}
+
+.site-nav.is-collapsible .nav-toggle {
+    display: inline-flex;
+}
+
+.site-nav.is-collapsible ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.38rem);
+    right: 0;
+    width: 12.5rem;
+    padding: 0.35rem;
+    border: none;
+    border-radius: 0.7rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+}
+
+/* In collapsed mode, links look like plain menu rows instead of boxed desktop pills. */
+.site-nav.is-collapsible a {
+    border: none;
+}
+
+.site-nav.is-collapsible a:hover,
+.site-nav.is-collapsible a:focus-visible {
+    border-color: transparent;
+}
+
+/* JS toggles .is-open to reveal the mobile dropdown list. */
+.site-nav.is-collapsible.is-open ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+
+/* =====================
+   Shared Text Treatment
+   ===================== */
+.kicker {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+}
+
+h1 {
+    margin-top: 0.45rem;
+    font-size: clamp(2rem, 4.1vw, 3rem);
+    color: var(--c-ink);
+}
+
+.lead {
+    margin-top: 0.55rem;
+    color: var(--c-muted);
+    max-width: 65ch;
+}
+
+.form-note {
+    color: var(--c-muted);
+}
+
+/* ==========================
+   Shared Form + Button Rules
+   ========================== */
+.form-field label {
+    display: block;
+    margin-bottom: 0.34rem;
+    font-weight: 700;
+    color: var(--c-deep);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: #ffffff;
+    color: var(--c-ink);
+    padding: 0.58rem 0.68rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+    resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: rgba(77, 72, 71, 0.72);
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+    outline: none;
+    border-color: var(--c-muted);
+    box-shadow: 0 0 0 3px rgba(139, 170, 173, 0.3);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.btn {
+    border: 1px solid transparent;
+    border-radius: 0.55rem;
+    padding: 0.56rem 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--c-deep);
+    color: var(--c-paper);
+    border-color: var(--c-deep);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: #244849;
+}
+
+.btn-secondary {
+    background: rgba(139, 170, 173, 0.18);
+    color: var(--c-deep);
+    border-color: var(--c-soft);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background: rgba(139, 170, 173, 0.3);
+    border-color: var(--c-muted);
+}
+
+.help-list {
+    margin-top: 0.7rem;
+    padding-left: 1.15rem;
+    list-style: disc;
+    display: grid;
+    gap: 0.42rem;
+    color: var(--c-muted);
+}
+
+.help-list li::marker {
+    color: var(--c-soft);
+}
+
+/* ======
+   Footer
+   ====== */
+.site-footer {
+    margin-top: 0.5rem;
+    padding: 0.55rem 0.55rem 0.2rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--c-paper);
+    text-align: center;
+    color: var(--c-muted);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* ==================
+   Shared Responsives
+   ================== */
+/* Tablet/small-laptop adjustments. */
+@media (max-width: 900px) {
+    body {
+        padding: 0.3rem 0.6cm 0.45rem;
+    }
+
+    .nav-header {
+        position: static;
+    }
+}
+
+/* Phone-specific spacing and nav dropdown sizing. */
+@media (max-width: 560px) {
+    body {
+        padding: 0.18rem 0.35rem 0.35rem;
+    }
+
+    .nav-header {
+        padding: 0.45rem 0.6rem;
+    }
+
+    .site-mark {
+        font-size: 1.1rem;
+    }
+
+    .site-nav.is-collapsible ul {
+        width: min(88vw, 12.5rem);
+    }
+}
+
+--- END OF FILE ---

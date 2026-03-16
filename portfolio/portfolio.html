@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata for encoding, viewport, and browser title bar. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Portfolio</title>
+
+    <!-- Shared typography family pairing used across portfolio pages. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Nunito+Sans:wght@400;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Global reset and page-specific styling. -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="portfolio.css">
+
+    <!-- Navigation behaviour script (hamburger menu + dismiss logic). -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Accessibility skip target for keyboard users. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared portfolio navigation header. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Reused global navigation route list. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portfolio repository showcase content. -->
+    <main id="main-content" class="portfolio-shell">
+        <!-- Introductory context for assessors/recruiters reading this page. -->
+        <section class="portfolio-intro" aria-labelledby="portfolio-title">
+            <p class="kicker">Portfolio</p>
+            <h1 id="portfolio-title">Repository Showcase</h1>
+            <p class="lead">
+                A curated collection of projects with screenshots, repository links, and short writeups.
+            </p>
+        </section>
+
+        <!-- Two-column feature layout: main project left, supporting projects stacked right. -->
+        <section class="project-grid" aria-label="Project cards">
+            <!-- Featured project card with screenshot and extended description. -->
+            <article class="project-card project-card-main">
+                <figure class="project-figure">
+                    <!-- Current available project screenshot (Gephi export). -->
+                    <img
+                        class="project-image"
+                        src="gephi.png"
+                        alt="Gephi network graph generated from hashtag co-occurrence analysis"
+                    >
+                    <figcaption>Most recent Gephi output from the TikTok-Web-Scraper pipeline.</figcaption>
+                </figure>
+                <div class="project-copy">
+                    <h2>TikTok Web Scraper &amp; FMCG Analysis Pipeline</h2>
+                    <p class="project-description">
+                        Multi-platform trend intelligence system that scrapes TikTok, Twitter, and Reddit, then runs analytics for momentum,
+                        platform consensus, and product-opportunity discovery. The pipeline also builds hashtag co-occurrence graphs in GEXF for Gephi visualisation.
+                    </p>
+                    <p class="project-tech">Tech: Python, Flask, Pandas, NumPy, NetworkX, Selenium, Zendriver, OpenAI API</p>
+                    <!-- Repository visibility badge shown instead of a public URL link. -->
+                    <span class="project-private-badge" aria-label="Private repository">Private repository</span>
+                </div>
+            </article>
+
+            <!-- Secondary project column: compact stacked cards for additional work. -->
+            <div class="project-stack">
+                <!-- Supporting project: hackathon note taker. -->
+                <article class="project-card project-card-side">
+                    <div class="project-copy">
+                        <h2>First-Year Hackathon Note Taker</h2>
+                        <p class="project-description">
+                            A note-taking web application built for a first-year hackathon, designed to support users who need structured help with creating and managing notes.
+                            The project includes account flows and persisted note data using a local database.
+                        </p>
+                        <p class="project-tech">Tech: Python, Reflex, SQLite, bcrypt, Regex validation</p>
+                        <a class="project-link" href="https://github.com/thekuddlekoala/First-Year-Hackathon--Note-Taker" target="_blank" rel="noopener noreferrer">Repository link</a>
+                    </div>
+                </article>
+
+                <!-- Supporting project: GCSE music quiz system. -->
+                <article class="project-card project-card-side">
+                    <div class="project-copy">
+                        <h2>GCSE NEA Music Quiz</h2>
+                        <p class="project-description">
+                            A command-line music quiz system built around registration, login, score tracking, and leaderboard ranking.
+                            Song prompts are loaded from text datasets and randomized to create a replayable quiz flow.
+                        </p>
+                        <p class="project-tech">Tech: Python, OOP, Text-file data storage, Randomisation, Regex parsing</p>
+                        <a class="project-link" href="https://github.com/andii-d/nea-project" target="_blank" rel="noopener noreferrer">Repository link</a>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Shared footer branding. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

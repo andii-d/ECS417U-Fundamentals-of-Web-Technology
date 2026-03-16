@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata for responsive rendering and tab title. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Portfolio Home</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (Phase 1 requirement) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- External JS only (for hamburger navigation behaviour) -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Skip link appears when focused and lets keyboard users bypass repeated nav. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Dedicated top header bar with clustered navigation -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <!-- Main site navigation (Phase 1 requirement) -->
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Primary site routes used across all portfolio pages. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- About section: intro copy, profile image, quick links, and decorative SVG background. -->
+        <section class="landing-shell" aria-labelledby="landing-title">
+            <!-- Decorative SVG overlay sits behind the main content and is hidden from assistive tech. -->
+            <svg
+                class="about-overlay"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid slice"
+                aria-hidden="true"
+                focusable="false"
+            >
+                <defs>
+                    <!-- Gradient for line-work accents. -->
+                    <linearGradient id="about-overlay-line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8BAAAD" stop-opacity="0.35" />
+                        <stop offset="55%" stop-color="#4D4847" stop-opacity="0.2" />
+                        <stop offset="100%" stop-color="#1C3738" stop-opacity="0.28" />
+                    </linearGradient>
+
+                    <!-- Soft top-right glow layer. -->
+                    <radialGradient id="about-overlay-glow-gradient" cx="82%" cy="14%" r="72%">
+                        <stop offset="0%" stop-color="#8BAAAD" stop-opacity="0.22" />
+                        <stop offset="100%" stop-color="#F4FFF8" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+
+                <!-- Full-bleed glow background. -->
+                <rect width="100" height="100" fill="url(#about-overlay-glow-gradient)" />
+
+                <!-- Curved line accents. -->
+                <g fill="none" stroke="url(#about-overlay-line-gradient)" stroke-linecap="round">
+                    <path id="about-wave-main" d="M -10 66 C 10 52, 30 78, 52 60 S 95 34, 112 48" stroke-width="0.35" />
+                    <path id="about-wave-accent" d="M -20 72 C 6 58, 27 84, 48 66 S 86 40, 109 54" stroke-width="0.22" stroke-dasharray="0.7 1.8" opacity="0.8" />
+                </g>
+
+                <!-- Circular accents for depth. -->
+                <g fill="none" stroke="url(#about-overlay-line-gradient)">
+                    <circle id="about-ring-top-right" cx="80" cy="18" r="13" stroke-width="0.2" opacity="0.45" />
+                    <circle id="about-ring-bottom-left" cx="14" cy="86" r="9.5" stroke-width="0.18" opacity="0.3" />
+                </g>
+            </svg>
+
+            <!-- Introductory biography copy for home page context. -->
+            <article class="landing-copy">
+                <p class="kicker">About Me</p>
+                <h1 id="landing-title">Hello! I'm Andy!</h1>
+                <!-- Short lead paragraphs are intentionally split for easy scanning. -->
+                <p class="lead">
+                    I'm a Computer Science student at Queen Mary University of London.
+                </p>
+                <p class="lead">
+                    I build web scrapers and turn raw output into useful visualisations.
+                </p>
+                <p class="lead">
+                    I focus on Python and Flask, with backend work using tools such as Scrapling, NumPy, and Pandas.
+                </p>
+
+                <p class="lead">
+                    I also like to go to the gym, and have a particular interest for jewellery and fashion!
+                </p>
+            </article>
+
+            <!-- Profile image and contextual caption. -->
+            <figure class="landing-figure">
+                <div class="landing-figure-media">
+                    <img
+                        src="IMG_1794.JPG"
+                        alt="Me"
+                    >
+
+                    <!-- Invisible keyboard-accessible hotspot that reveals outfit links. -->
+                    <details class="bag-hotspot">
+                        <summary aria-label="Reveal Uniqlo bag items">
+                            <span class="sr-only">Reveal Uniqlo bag items</span>
+                        </summary>
+                        <div class="bag-hotspot-panel">
+                            <p class="bag-hotspot-title">In the Uniqlo bag:</p>
+                            <ul class="bag-items">
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E479816-000/00?colorDisplayCode=68&amp;sizeDisplayCode=034" target="_blank" rel="noopener noreferrer">Jeans (Blue, Straight Legged)</a></li>
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E450535-000/00?colorDisplayCode=36&amp;sizeDisplayCode=005" target="_blank" rel="noopener noreferrer">Merino Jumper (Red, Slim Fit)</a></li>
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E479235-000/00?colorDisplayCode=69&amp;sizeDisplayCode=005" target="_blank" rel="noopener noreferrer">Wool Jumper (Navy)</a></li>
+                                <li><a href="https://www.uniqlo.com/uk/en/products/E482211-000/00?colorDisplayCode=09&amp;sizeDisplayCode=003" target="_blank" rel="noopener noreferrer">Jacket (Burgundy)</a></li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+                <figcaption>
+                    Me
+                </figcaption>
+            </figure>
+
+            <!-- Social links use decorative SVG icons with accessible link labels. -->
+            <ul class="social-links" aria-label="Social profile links">
+                <li>
+                    <a
+                        class="social-link"
+                        href="https://github.com/andii-d"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub profile"
+                    >
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/github.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="social-link"
+                        href="https://www.linkedin.com/in/andydishnica/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn profile"
+                    >
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/brands/linkedin.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="social-link" href="mailto:adishnica25@se25.qmul.ac.uk" aria-label="Email">
+                        <img
+                            src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/svgs/solid/envelope.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                        >
+                        <span class="sr-only">Email</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* =========================================
+   reset.css
+   Global baseline reset for the portfolio.
+   ========================================= */
+
+/* Remove default spacing and force predictable box sizing for all elements. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure the document can expand to the full viewport height. */
+html,
+body {
+    min-height: 100%;
+}
+
+/* Apply baseline text rendering improvements and default line rhythm. */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Explicit reset for HTML5 semantic layout elements used across the portfolio. */
+header,
+nav,
+main,
+section,
+article,
+figure,
+figcaption,
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+/* Keep media elements block-level and responsive by default. */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Ensure form controls inherit typography from surrounding content. */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove default list bullets/numbers so pages can define their own markers intentionally. */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove default link decoration; link styles are handled in shared/page CSS files. */
+a {
+    color: inherit;
+    text-decoration: none;
+}

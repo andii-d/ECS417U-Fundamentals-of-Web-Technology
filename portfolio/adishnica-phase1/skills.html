@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata controls encoding and responsive viewport scaling. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Skills</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (reset + page-specific CSS) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="skills.css">
+
+    <!-- Shared mobile navigation script -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Skip link improves keyboard navigation and satisfies accessibility best practice. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared sticky header used consistently across all portfolio pages. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Consistent route map used by every page in the portfolio. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html" aria-current="page">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Skills page content: intro, legend, then category-based skill graph cards. -->
+    <main id="main-content" class="skills-shell">
+        <!-- Page intro sets context for how percentages should be interpreted. -->
+        <section class="skills-intro" aria-labelledby="skills-title">
+            <p class="kicker">Skills Graph</p>
+            <h1 id="skills-title">Technical Skills Overview</h1>
+            <p class="lead">
+                This page maps my current skill profile using projects, modules, and experience listed in my CV.
+            </p>
+        </section>
+
+        <!-- Shared legend keeps bar colour meaning consistent in every domain card. -->
+        <figure class="skills-scale">
+            <figcaption>Graph scale used across all skill bars</figcaption>
+            <!-- Legend labels map directly to score ranges in each progress bar row. -->
+            <ul class="legend-list">
+                <li class="legend-item"><span class="legend-dot advanced"></span>Advanced (80-100)</li>
+                <li class="legend-item"><span class="legend-dot working"></span>Working (65-79)</li>
+                <li class="legend-item"><span class="legend-dot familiar"></span>Familiar (50-64)</li>
+            </ul>
+        </figure>
+
+        <!-- Edit each row's --level value (0-100) to update a bar without changing CSS. -->
+        <section class="skills-grid" aria-label="Skill graph by category">
+            <!-- Languages used across coursework, scraping projects, and module work. -->
+            <article class="skill-domain">
+                <h2>Languages</h2>
+                <p class="skill-domain-note">Core coding languages used in coursework and projects.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-advanced" style="--level: 92">
+                        <div class="skill-row-top"><span class="skill-name">Python</span><span class="skill-score">92%</span></div>
+                        <p class="skill-note">Primary language for automation, scraping, and data tooling.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-advanced" style="--level: 82">
+                        <div class="skill-row-top"><span class="skill-name">SQL</span><span class="skill-score">82%</span></div>
+                        <p class="skill-note">Listed as proficient in CV and used for data querying.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 74">
+                        <div class="skill-row-top"><span class="skill-name">JavaScript</span><span class="skill-score">74%</span></div>
+                        <p class="skill-note">Used in the TikTok keyword analyser project interface.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 74">
+                        <div class="skill-row-top"><span class="skill-name">Java</span><span class="skill-score">74%</span></div>
+                        <p class="skill-note">Used in OOP coursework and my Typing Race Simulator project (ECS414U).</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 76">
+                        <div class="skill-row-top"><span class="skill-name">HTML &amp; CSS</span><span class="skill-score">76%</span></div>
+                        <p class="skill-note">Used for portfolio and project frontend structure/styling.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Libraries/frameworks that power automation, analysis, and data workflows. -->
+            <article class="skill-domain">
+                <h2>Frameworks &amp; Libraries</h2>
+                <p class="skill-domain-note">Tools explicitly used in CV-listed projects.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-advanced" style="--level: 90">
+                        <div class="skill-row-top"><span class="skill-name">Scrapling</span><span class="skill-score">90%</span></div>
+                        <p class="skill-note">Browser automation in scraping workflows.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 73">
+                        <div class="skill-row-top"><span class="skill-name">NetworkX</span><span class="skill-score">73%</span></div>
+                        <p class="skill-note">Graph-based keyword relationship analysis.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 74">
+                        <div class="skill-row-top"><span class="skill-name">NumPy / SciPy</span><span class="skill-score">74%</span></div>
+                        <p class="skill-note">Data shaping and numeric processing in analysis steps.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 66">
+                        <div class="skill-row-top"><span class="skill-name">Cryptography (Fernet)</span><span class="skill-score">66%</span></div>
+                        <p class="skill-note">Encryption implementation in password manager project.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 78">
+                        <div class="skill-row-top"><span class="skill-name">Graph centrality methods</span><span class="skill-score">78%</span></div>
+                        <p class="skill-note">Used to rank keyword importance from scraped datasets.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Module-specific card: evidence of web-tech learning outcomes. -->
+            <article class="skill-domain">
+                <h2>Module Reinforcement: Fundamentals of Web Technology</h2>
+                <p class="skill-domain-note">This module directly strengthens my existing web stack with frontend and server-side foundations.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-advanced" style="--level: 81">
+                        <div class="skill-row-top"><span class="skill-name">HTML semantics &amp; accessibility</span><span class="skill-score">81%</span></div>
+                        <p class="skill-note">Semantic structure, clear headings, and accessibility-first markup.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-advanced" style="--level: 80">
+                        <div class="skill-row-top"><span class="skill-name">CSS layout systems (Flexbox/Grid)</span><span class="skill-score">80%</span></div>
+                        <p class="skill-note">Responsive layout patterns used across this portfolio project.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 76">
+                        <div class="skill-row-top"><span class="skill-name">JavaScript interactivity</span><span class="skill-score">76%</span></div>
+                        <p class="skill-note">Client-side behaviour such as navigation toggles and UI controls.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-familiar" style="--level: 62">
+                        <div class="skill-row-top"><span class="skill-name">PHP fundamentals</span><span class="skill-score">62%</span></div>
+                        <p class="skill-note">Early backend foundations for dynamic page workflows.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Module-specific card: evidence of OOP reinforcement. -->
+            <article class="skill-domain">
+                <h2>Module Reinforcement: Java OOP</h2>
+                <p class="skill-domain-note">The Java OOP module expands core software design skills and type-safe coding habits.</p>
+                <ul class="skill-bars">
+                    <li class="skill-row skill-working" style="--level: 79">
+                        <div class="skill-row-top"><span class="skill-name">Object-oriented design in Java</span><span class="skill-score">79%</span></div>
+                        <p class="skill-note">Encapsulation, inheritance, polymorphism, and class design in Typist/TypingRace modelling.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 72">
+                        <div class="skill-row-top"><span class="skill-name">Generic types</span><span class="skill-score">72%</span></div>
+                        <p class="skill-note">Type-safe abstractions and reusable data structures.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 69">
+                        <div class="skill-row-top"><span class="skill-name">Git CLI workflow</span><span class="skill-score">69%</span></div>
+                        <p class="skill-note">Branching, commits, and controlled collaboration from terminal tools.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                    <li class="skill-row skill-working" style="--level: 75">
+                        <div class="skill-row-top"><span class="skill-name">Algorithmic problem decomposition</span><span class="skill-score">75%</span></div>
+                        <p class="skill-note">Applied in race-turn logic, burnout handling, and bug-fix tasks in the simulator.</p>
+                        <div class="skill-meter"><span class="skill-fill"></span></div>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <!-- Shared footer for visual consistency and clear page ending landmark. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

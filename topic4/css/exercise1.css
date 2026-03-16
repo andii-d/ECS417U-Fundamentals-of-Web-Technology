@@ -1,17 +1,22 @@
 table {
     margin: 2em;
-    border: 2px solid teal;
+    border: 0.15em solid teal;
 }
 
 caption {
-    background: teal;
-    color: white;
+    background-color: teal;
+    color: black;
     font-weight: bold;
+    font-size: 1.5em;
     padding: 0.5em;
 }
 
 th, td {
-    border: 1px solid gray;
+    border: 0.1em solid gray;
     padding: 0.5em;
     text-align: center;
+}
+
+th {
+    background-color: lightgray;
 }

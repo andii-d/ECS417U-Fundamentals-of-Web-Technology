@@ -1,0 +1,240 @@
+/* index.css: home page styles (imports shared design system) */
+@import url("styles.css");
+
+/* =================
+   Home Page Content
+   ================= */
+/* Keep intro paragraphs from stretching too wide for comfortable reading. */
+.lead {
+    max-width: 50ch;
+}
+
+/* Main two-column hero layout (bio copy + image) plus bottom social row. */
+.landing-shell {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "copy figure"
+        "social social";
+    gap: 0.85rem;
+    align-items: stretch;
+    min-height: calc(100vh - 9rem);
+    margin-bottom: 1rem;
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Decorative SVG overlay that sits behind text/image content. */
+.about-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.82;
+}
+
+/* Content layers sit above the decorative overlay. */
+.landing-copy,
+.landing-figure {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0.85rem;
+    box-shadow: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left column copy is vertically centered in the hero shell. */
+.landing-copy {
+    grid-area: copy;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 1.2rem;
+    padding-bottom: 0.42rem;
+}
+
+/* Invisible, keyboard-focusable image hotspot. */
+.bag-hotspot {
+    position: absolute;
+    top: 68%;
+    right: 15%;
+    z-index: 3;
+}
+
+/* Summary creates a clickable but visually invisible hotspot region. */
+.bag-hotspot summary {
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 0.18rem;
+    background: transparent;
+    outline: none;
+}
+
+.bag-hotspot summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Focus ring helps keyboard users discover the hotspot target area. */
+.bag-hotspot summary:focus-visible {
+    outline: 2px solid rgba(139, 170, 173, 0.85);
+    outline-offset: 2px;
+}
+
+/* Popover-style info panel shown when <details> is open. */
+.bag-hotspot-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.42rem);
+    right: 0;
+    width: min(18rem, 70vw);
+    padding: 0.46rem 0.6rem;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.58rem;
+    background: rgba(244, 255, 248, 0.96);
+    box-shadow: var(--shadow-soft);
+}
+
+.bag-hotspot[open] .bag-hotspot-panel {
+    display: block;
+}
+
+/* Panel heading and list typography. */
+.bag-hotspot-title {
+    margin: 0 0 0.35rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--c-deep);
+}
+
+.bag-items {
+    margin: 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 0.26rem;
+}
+
+/* Link colour styling inside the hotspot panel. */
+.bag-items a {
+    color: var(--c-deep);
+    text-underline-offset: 0.14em;
+}
+
+.bag-items a:hover,
+.bag-items a:focus-visible {
+    color: var(--c-muted);
+}
+
+/* Social icon row spans full width beneath hero content. */
+.social-links {
+    grid-area: social;
+    align-self: end;
+    margin: 0;
+    padding: 0 0.85rem 0.65rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Circular icon buttons with subtle hover lift. */
+.social-link {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid var(--c-soft);
+    background: rgba(139, 170, 173, 0.16);
+    color: var(--c-deep);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    transform: translateY(-1px);
+    background: var(--c-soft);
+    border-color: var(--c-muted);
+}
+
+.social-link img {
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+}
+
+/* Wrapper around portrait image so overlay controls can be positioned absolutely. */
+.landing-figure-media {
+    width: 120%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Fixed image framing keeps portrait ratio visually consistent. */
+.landing-figure-media img {
+    width: 100%;
+    min-height: 290px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.landing-figure {
+    grid-area: figure;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Caption centered below the figure media. */
+.landing-figure figcaption {
+    width: 100%;
+    margin-top: 0.55rem;
+    color: var(--c-muted);
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .landing-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "copy"
+            "figure"
+            "social";
+        min-height: auto;
+    }
+
+    .landing-copy {
+        padding-bottom: 1.2rem;
+    }
+
+    .social-links {
+        padding: 0 0.85rem 0.55rem;
+    }
+
+    .landing-figure-media img {
+        min-height: 220px;
+    }
+}

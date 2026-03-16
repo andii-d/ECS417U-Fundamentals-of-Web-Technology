@@ -1,0 +1,167 @@
+/* portfolio.css: portfolio page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ======================
+   Portfolio Page Content
+   ====================== */
+.portfolio-shell {
+    min-height: calc(100vh - 9rem);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 1rem;
+}
+
+/* Intro block remains lightweight because cards carry most detail. */
+.portfolio-intro {
+    padding: 0.25rem 0.1rem 0;
+}
+
+/* Wider measure for project descriptions than default .lead width. */
+.lead {
+    max-width: 70ch;
+}
+
+/* Desktop layout: featured project + supporting project stack. */
+.project-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+    gap: 0.9rem;
+    align-items: start;
+}
+
+/* Right column stacks supporting projects vertically beside the featured card. */
+.project-stack {
+    display: grid;
+    gap: 0.9rem;
+    align-content: start;
+}
+
+/* Shared project card surface and spacing. */
+.project-card {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    background: rgba(244, 255, 248, 0.94);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    display: grid;
+    align-content: start;
+}
+
+/* Featured card stretches to align with right-column stack height. */
+.project-card-main {
+    height: 100%;
+}
+
+/* Slightly tighter spacing for short text-only side cards. */
+.project-card-side .project-copy {
+    gap: 0.35rem;
+}
+
+/* Figure wrapper for screenshot + caption. */
+.project-figure {
+    padding: 0.75rem 0.75rem 0.35rem;
+}
+
+/* Screenshot sizing keeps large visual anchor on desktop. */
+.project-image {
+    width: 100%;
+    min-height: 10.5rem;
+    height: clamp(15rem, 31vw, 22rem);
+    border: 1px solid rgba(139, 170, 173, 0.35);
+    border-radius: 0.65rem;
+    object-fit: cover;
+    background: rgba(139, 170, 173, 0.08);
+}
+
+.project-figure figcaption {
+    margin-top: 0.45rem;
+    color: var(--c-muted);
+    font-size: 0.9rem;
+}
+
+/* Text content layout inside each card. */
+.project-copy {
+    padding: 0.35rem 0.75rem 0.85rem;
+    display: grid;
+    gap: 0.42rem;
+}
+
+.project-copy h2 {
+    color: var(--c-deep);
+}
+
+.project-description,
+.project-tech {
+    color: var(--c-muted);
+}
+
+/* CTA-style repository link for public projects. */
+.project-link {
+    margin-top: 0.18rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: rgba(139, 170, 173, 0.18);
+    color: var(--c-deep);
+    font-weight: 700;
+    padding: 0.48rem 0.75rem;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    background: rgba(139, 170, 173, 0.3);
+    border-color: var(--c-muted);
+    transform: translateY(-1px);
+}
+
+/* Non-interactive badge used when a repository is private/unavailable. */
+.project-private-badge {
+    margin-top: 0.18rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    border: 1px solid rgba(77, 72, 71, 0.3);
+    border-radius: 0.55rem;
+    background: rgba(77, 72, 71, 0.12);
+    color: var(--c-muted);
+    font-weight: 700;
+    padding: 0.48rem 0.75rem;
+    cursor: default;
+    user-select: none;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .portfolio-shell {
+        min-height: auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card-main {
+        height: auto;
+    }
+
+    .project-image {
+        height: 13.5rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .portfolio-shell {
+        padding: 0.75rem;
+    }
+}

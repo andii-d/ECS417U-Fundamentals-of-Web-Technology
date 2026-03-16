@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata and title for this authentication page. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Login</title>
+
+    <!-- Shared typography used across all Phase 1 pages. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;family=Nunito+Sans:wght@400;600;700&amp;display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Reset first, then page-specific styles for predictable layout behaviour. -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="login.css">
+
+    <!-- External JS only: controls the responsive navigation menu state. -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Keyboard accessibility shortcut for skipping repeated navigation. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared top navigation shell used by the full portfolio site. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Global page links for consistent movement across the site. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html" aria-current="page">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login page main content area. -->
+    <main id="main-content" class="login-shell">
+        <!-- Intro copy explains purpose of this page in the blog workflow. -->
+        <section class="login-intro" aria-labelledby="login-title">
+            <p class="kicker">Blog Access</p>
+            <h1 id="login-title">Welcome back</h1>
+            <p class="lead">
+                Log in to add or manage portfolio blog entries.
+            </p>
+        </section>
+
+        <!-- Form panel: simple login form with HTML5 validation. -->
+        <section class="login-panel" aria-label="Login area">
+            <article class="login-card">
+                <h2>Sign in</h2>
+                <p class="form-note">Please use your registered email address and password.</p>
+
+                <form class="login-form" action="addEntry.html" method="post">
+                    <!-- HTML5 email input provides built-in type + required validation. -->
+                    <div class="form-field">
+                        <label for="login-email">Email address</label>
+                        <input
+                            id="login-email"
+                            name="email"
+                            type="email"
+                            placeholder="name@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <!-- Password field requires at least 8 characters via minlength. -->
+                    <div class="form-field">
+                        <label for="login-password">Password</label>
+                        <input
+                            id="login-password"
+                            name="password"
+                            type="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <!-- Primary and secondary actions for form submit/reset. -->
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Log In</button>
+                        <button class="btn btn-secondary" type="reset">Clear</button>
+                    </div>
+                </form>
+            </article>
+
+            <!-- Side notes help during assessor walkthroughs and demos. -->
+            <aside class="login-help">
+                <h2>Quick notes</h2>
+                <ul class="help-list">
+                    <li>Use your QMUL email account for assessor demos.</li>
+                    <li>After successful login, the Add Entry page should be available.</li>
+                    <li>Use Clear to quickly reset both form fields.</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Shared footer branding. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

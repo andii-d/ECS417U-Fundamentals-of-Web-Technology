@@ -1,0 +1,101 @@
+/* education.css: education page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ======================
+   Education Page Layout
+   ====================== */
+.page-shell {
+    display: grid;
+    gap: 0.85rem;
+}
+
+/* Card styling shared by intro, timeline cards, and focus notes. */
+.page-intro,
+.edu-card,
+.edu-notes {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+}
+
+.page-intro {
+    padding: 0.95rem;
+}
+
+/* Two-column timeline on desktop; collapses to one column on smaller screens. */
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+/* Individual education card layout and spacing. */
+.edu-card {
+    padding: 0.95rem;
+    display: grid;
+    gap: 0.6rem;
+}
+
+/* Institution name prominence for quick scanning. */
+.edu-card-header h2 {
+    font-size: 1.22rem;
+}
+
+/* Location metadata line. */
+.edu-location {
+    margin-top: 0.25rem;
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+/* Date range line shown under location. */
+.edu-dates {
+    margin-top: 0.15rem;
+    color: var(--c-muted);
+    font-size: 0.92rem;
+}
+
+/* Qualification label such as degree / A Levels. */
+.edu-award {
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+/* Subheading used before module/subject list blocks. */
+.edu-card h3 {
+    font-size: 0.95rem;
+    color: var(--c-muted);
+}
+
+/* Vertical list rhythm for modules/grades. */
+.edu-list {
+    margin: 0;
+    padding-left: 1rem;
+    display: grid;
+    gap: 0.25rem;
+}
+
+/* Re-introduce bullets because reset.css removes default list markers globally. */
+.edu-list li {
+    list-style: disc;
+    color: var(--c-muted);
+}
+
+/* Closing notes panel links study history with current technical focus. */
+.edu-notes {
+    padding: 0.95rem;
+}
+
+.edu-notes h2 {
+    font-size: 1.26rem;
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,141 @@
+/* addEntry.css: add-entry page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ======================
+   Add Entry Page Content
+   ====================== */
+.entry-shell {
+    min-height: calc(100vh - 9rem);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    gap: 1rem;
+}
+
+/* Intro copy at top of editor page. */
+.entry-intro {
+    padding: 0.2rem 0.1rem 0;
+}
+
+/* Allow longer intro paragraph line length on this text-heavy page. */
+.lead {
+    max-width: 66ch;
+}
+
+/* Desktop layout: wide form column + narrower checklist column. */
+.entry-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 0.9rem;
+}
+
+/* Consistent card styling for editor form and sidebar checklist. */
+.entry-card,
+.entry-help {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    background: rgba(244, 255, 248, 0.94);
+    box-shadow: var(--shadow-soft);
+    padding: 1rem;
+}
+
+/* Card headings. */
+.entry-card h2,
+.entry-help h2 {
+    margin-bottom: 0.28rem;
+    color: var(--c-deep);
+}
+
+/* Vertical rhythm between field groups. */
+.entry-form {
+    display: grid;
+    gap: 0.82rem;
+}
+
+/* Pair related fields side-by-side to reduce vertical scrolling. */
+.field-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.72rem;
+}
+
+/* Grouped publishing options (radio/checkbox controls). */
+.entry-options {
+    border: 1px dashed var(--c-soft);
+    border-radius: 0.6rem;
+    padding: 0.62rem 0.68rem 0.68rem;
+    display: grid;
+    gap: 0.62rem;
+}
+
+/* Fieldset legend acts as a mini-section title. */
+.entry-options legend {
+    font-weight: 700;
+    color: var(--c-deep);
+    padding: 0 0.28rem;
+}
+
+/* Layout for grouped radio/checkbox options. */
+.option-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.72rem;
+}
+
+.option-label {
+    font-weight: 700;
+    color: var(--c-deep);
+}
+
+/* Label + control alignment for inline options. */
+.inline-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.36rem;
+    color: var(--c-muted);
+}
+
+/* JS-applied state for missing title/post fields. */
+.form-field .field-error {
+    border-color: #b42318;
+    background: #fff4f2;
+}
+
+.form-field .field-error:focus-visible {
+    box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.22);
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .entry-shell {
+        min-height: auto;
+    }
+
+    .entry-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .entry-shell {
+        padding: 0.75rem;
+    }
+
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+}

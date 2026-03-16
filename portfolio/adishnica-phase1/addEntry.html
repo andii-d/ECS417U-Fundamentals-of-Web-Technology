@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata and page title for Add Entry screen. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Add Entry</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (reset + page-specific CSS) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="addEntry.css">
+
+    <!-- Shared mobile navigation script -->
+    <script src="nav-menu.js" defer></script>
+    <!-- Entry-form interaction script (clear confirmation + required post checks). -->
+    <script src="add-entry.js" defer></script>
+</head>
+<body>
+    <!-- Accessibility shortcut: skip repeated navigation and jump to the form. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared top navigation used across all pages for consistent routing. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Global nav links reused from other pages. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html" aria-current="page">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main editor shell: intro plus two-column form/help layout. -->
+    <main id="main-content" class="entry-shell">
+        <!-- Intro explains the purpose of this page and validation approach. -->
+        <section class="entry-intro" aria-labelledby="entry-title">
+            <p class="kicker">Blog Editor</p>
+            <h1 id="entry-title">Create a blog entry</h1>
+            <p class="lead">
+                Add a new post with clear metadata, a concise summary, and structured content. Fields below include HTML5 validation for clean input.
+            </p>
+        </section>
+
+        <section class="entry-layout" aria-label="Entry editor">
+            <article class="entry-card">
+                <h2>Entry form</h2>
+                <p class="form-note">Required fields are marked by browser validation.</p>
+
+                <!--
+                    Phase 1 frontend form:
+                    - Uses HTML5 validation attributes.
+                    - JS (add-entry.js) handles clear confirmation and title/body guard checks.
+                -->
+                <form id="entry-form" class="entry-form" action="portfolio.html" method="post">
+                    <!-- Row 1: title + slug identify the entry. -->
+                    <div class="field-row">
+                        <div class="form-field">
+                            <label for="entry-title-input">Title</label>
+                            <input
+                                id="entry-title-input"
+                                name="title"
+                                type="text"
+                                placeholder="e.g. Building a keyword analyser"
+                                minlength="5"
+                                maxlength="90"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="entry-slug">Slug</label>
+                            <input
+                                id="entry-slug"
+                                name="slug"
+                                type="text"
+                                placeholder="keyword-analyser-project"
+                                pattern="[a-z0-9-]+"
+                                title="Use lowercase letters, numbers, and hyphens only."
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Row 2: category and publication date metadata. -->
+                    <div class="field-row">
+                        <div class="form-field">
+                            <label for="entry-category">Category</label>
+                            <select id="entry-category" name="category" required>
+                                <option value="">Choose a category</option>
+                                <option value="project">Project</option>
+                                <option value="education">Education</option>
+                                <option value="skills">Skills</option>
+                                <option value="work">Work Experience</option>
+                                <option value="general">General</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="entry-date">Publish date</label>
+                            <input id="entry-date" name="publishDate" type="date" required>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: estimated reading time and optional external reference. -->
+                    <div class="field-row">
+                        <div class="form-field">
+                            <label for="entry-read-time">Estimated read time (minutes)</label>
+                            <input id="entry-read-time" name="readTime" type="number" min="1" max="60" step="1" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="entry-url">Reference URL (optional)</label>
+                            <input
+                                id="entry-url"
+                                name="referenceUrl"
+                                type="url"
+                                placeholder="https://example.com/source"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Short preview text used for cards/listing contexts. -->
+                    <div class="form-field">
+                        <label for="entry-summary">Summary</label>
+                        <textarea
+                            id="entry-summary"
+                            name="summary"
+                            rows="3"
+                            minlength="30"
+                            maxlength="220"
+                            placeholder="Write a short summary for preview cards."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- Full post body text area (main article content). -->
+                    <div class="form-field">
+                        <label for="entry-body">Main content</label>
+                        <textarea
+                            id="entry-body"
+                            name="post"
+                            rows="10"
+                            minlength="120"
+                            placeholder="Write your full entry content here..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- Publication controls grouped semantically in a fieldset. -->
+                    <fieldset class="entry-options">
+                        <legend>Publishing options</legend>
+                        <div class="option-row">
+                            <p class="option-label">Visibility</p>
+                            <label class="inline-option" for="visibility-public">
+                                <input id="visibility-public" type="radio" name="visibility" value="public" required checked>
+                                Public
+                            </label>
+                            <label class="inline-option" for="visibility-private">
+                                <input id="visibility-private" type="radio" name="visibility" value="private" required>
+                                Private
+                            </label>
+                        </div>
+
+                        <div class="option-row">
+                            <label class="inline-option" for="entry-featured">
+                                <input id="entry-featured" type="checkbox" name="featured">
+                                Mark as featured
+                            </label>
+                            <label class="inline-option" for="entry-comments">
+                                <input id="entry-comments" type="checkbox" name="allowComments" checked>
+                                Allow comments
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Optional taxonomy tags to support filtering/search later. -->
+                    <div class="form-field">
+                        <label for="entry-tags">Tags (comma separated)</label>
+                        <input
+                            id="entry-tags"
+                            name="tags"
+                            type="text"
+                            placeholder="python, scraping, visualisation"
+                            pattern="[A-Za-z0-9 ,#-]+"
+                            title="Use letters, numbers, spaces, commas, # and hyphens."
+                        >
+                    </div>
+
+                    <!-- Submit posts the form; Clear uses JS confirmation flow. -->
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Post</button>
+                        <button id="entry-clear-button" class="btn btn-secondary" type="button">Clear</button>
+                    </div>
+                </form>
+            </article>
+
+            <!-- Quick checklist supports demos and keeps post quality consistent. -->
+            <aside class="entry-help">
+                <h2>Writing checklist</h2>
+                <ul class="help-list">
+                    <li>Use a clear title and category so posts stay organised.</li>
+                    <li>Keep summary short; reserve deeper detail for main content.</li>
+                    <li>Add one external reference if your entry is research-based.</li>
+                    <li>Use tags to improve filtering on your portfolio page.</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Shared footer keeps visual rhythm consistent between pages. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

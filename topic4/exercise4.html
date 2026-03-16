@@ -1,59 +1,81 @@
-<form method="GET"
-      action="https://drusmannaeem.co.uk/process.php">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 4</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/exercise4.css">
+</head>
+<body>
 
-<h2>Shirt Order Form</h2>
+<form method="GET" action="https://drusmannaeem.co.uk/process.php">
+    <h2>Shirt Order Form</h2>
 
-<label>Shirt Size</label>
-<select name="shirt_size">
-  <option>XS</option>
-  <option>S</option>
-  <option>M</option>
-  <option>L</option>
-  <option>XL</option>
-</select>
+    <label>Shirt Size
+        <select name="shirt_size">
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+        </select>
+    </label>
 
-<p>Sleeves</p>
-<label><input type="radio" name="sleeves" value="short" checked> Short</label>
-<label><input type="radio" name="sleeves" value="long"> Long</label>
+    <p>Sleeves</p>
+    <label><input type="radio" name="sleeves" value="short" checked> Short</label>
+    <label><input type="radio" name="sleeves" value="long"> Long</label>
 
-<label>Colour</label>
-<input type="color" name="colour">
+    <label>Choose Shirt Colour
+        <input type="color" name="color">
+    </label>
 
-<label>Quantity</label>
-<input type="range" name="quantity" min="1" max="10">
+    <label>Quantity
+        <input type="range" name="quantity" min="1" max="10">
+    </label>
 
-<label>Date</label>
-<input type="date" name="date">
+    <label>Date Requested
+        <input type="date" name="date">
+    </label>
 
-<label>Name</label>
-<input type="text" name="name">
+    <label>Name
+        <input type="text" name="name">
+    </label>
 
-<label>Email</label>
-<input type="email" name="email">
+    <label>Email Address
+        <input type="email" name="email">
+    </label>
 
-<label>Telephone</label>
-<input type="tel"
-       name="telephone"
-       pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+    <label>Telephone Number
+        <input type="tel" name="telephone"
+               pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}">
+    </label>
 
-<label>City</label>
-<input list="cities" name="city">
-<datalist id="cities">
-  <option>London</option>
-  <option>Manchester</option>
-  <option>Birmingham</option>
-  <option>Glasgow</option>
-</datalist>
+    <label>Address
+        <input type="text" name="address">
+    </label>
 
-<label>Postcode</label>
-<input type="text" name="postcode">
+    <label>City
+        <input list="cities" name="city">
+        <datalist id="cities">
+            <option>London</option>
+            <option>Manchester</option>
+            <option>Birmingham</option>
+            <option>Glasgow</option>
+        </datalist>
+    </label>
 
-<label>
-<input type="checkbox" name="accept">
-Please keep me informed
-</label>
+    <label>Postcode
+        <input type="text" name="postcode">
+    </label>
 
-<button type="submit">Submit</button>
-<button type="reset">Clear</button>
+    <label>
+        <input type="checkbox" name="accept">
+        Please keep me informed about future shirt designs
+    </label>
 
+    <button type="submit">Submit</button>
+    <button type="reset">Clear Form</button>
 </form>
+
+</body>
+</html>

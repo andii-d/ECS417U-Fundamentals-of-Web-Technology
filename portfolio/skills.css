@@ -1,0 +1,200 @@
+/* skills.css: skills page styles (imports shared design system) */
+@import url("styles.css");
+
+/* ==================
+   Skill Color Tokens
+   ================== */
+:root {
+    --c-advanced: #1f6f78;
+    --c-working: #4d8e94;
+    --c-familiar: #7fa8ab;
+}
+
+/* ============
+   Skills Layout
+   ============ */
+.skills-shell {
+    min-height: calc(100vh - 9rem);
+    display: grid;
+    gap: 0.85rem;
+}
+
+/* Shared panel surface used for intro, legend, and every skills domain card. */
+.skills-intro,
+.skills-scale,
+.skill-domain {
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-lg);
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+}
+
+.skills-intro {
+    padding: 1rem;
+}
+
+/* Scale legend explaining score-band colours. */
+.skills-scale {
+    padding: 0.8rem 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.skills-scale figcaption {
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+/* Horizontal legend list wraps on narrow screens. */
+.legend-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    color: var(--c-muted);
+    font-size: 0.9rem;
+}
+
+/* Colour indicator dots used in legend rows. */
+.legend-dot {
+    width: 0.72rem;
+    height: 0.72rem;
+    border-radius: 50%;
+}
+
+.legend-dot.advanced {
+    background: var(--c-advanced);
+}
+
+.legend-dot.working {
+    background: var(--c-working);
+}
+
+.legend-dot.familiar {
+    background: var(--c-familiar);
+}
+
+/* Two-column card grid on desktop. */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+/* Each domain card groups one skill family (title, context note, bars). */
+.skill-domain {
+    padding: 0.95rem;
+    display: grid;
+    gap: 0.62rem;
+}
+
+/* Card title and supporting note text. */
+.skill-domain h2 {
+    font-size: 1.18rem;
+}
+
+.skill-domain-note {
+    color: var(--c-muted);
+    font-size: 0.9rem;
+}
+
+/* List wrapper for per-skill rows. */
+.skill-bars {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+}
+
+/* Skill rows use --level (0-100) from inline style to drive fill width. */
+.skill-row {
+    --level: 50;
+    border: 1px solid rgba(139, 170, 173, 0.42);
+    border-radius: 0.65rem;
+    background: rgba(139, 170, 173, 0.08);
+    padding: 0.55rem 0.6rem;
+}
+
+/* Name + score row at top of each bar item. */
+.skill-row-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.55rem;
+}
+
+.skill-name {
+    color: var(--c-deep);
+    font-weight: 700;
+}
+
+.skill-score {
+    color: var(--c-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.skill-note {
+    margin-top: 0.15rem;
+    color: var(--c-muted);
+    font-size: 0.84rem;
+}
+
+/* Track and fill for percentage visualisation. */
+.skill-meter {
+    margin-top: 0.35rem;
+    width: 100%;
+    height: 0.44rem;
+    border-radius: 999px;
+    background: rgba(139, 170, 173, 0.28);
+    overflow: hidden;
+}
+
+.skill-fill {
+    display: block;
+    height: 100%;
+    width: calc(var(--level) * 1%);
+    border-radius: inherit;
+    background: var(--c-working);
+}
+
+/* Gradient variants by skill confidence tier. */
+.skill-row.skill-advanced .skill-fill {
+    background: linear-gradient(90deg, #2a7f88 0%, #1f6f78 100%);
+}
+
+.skill-row.skill-working .skill-fill {
+    background: linear-gradient(90deg, #6ea5a9 0%, #4d8e94 100%);
+}
+
+.skill-row.skill-familiar .skill-fill {
+    background: linear-gradient(90deg, #9ec0c2 0%, #7fa8ab 100%);
+}
+
+/* ==========
+   Responsive
+   ========== */
+@media (max-width: 900px) {
+    .skills-shell {
+        min-height: auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .skills-intro,
+    .skills-scale,
+    .skill-domain {
+        padding: 0.75rem;
+    }
+}

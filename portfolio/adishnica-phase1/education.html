@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Core metadata and page title for browser/UI context. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Dishnica | Education</title>
+
+    <!-- Google Fonts (Phase 1 requirement) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- External stylesheets (reset + page-specific CSS) -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="education.css">
+
+    <!-- Shared mobile navigation script -->
+    <script src="nav-menu.js" defer></script>
+</head>
+<body>
+    <!-- Accessibility shortcut to jump directly to page content. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared navigation header keeps movement between pages consistent. -->
+    <header class="nav-header">
+        <p class="site-mark">Andy Dishnica</p>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="primary-navigation"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <!-- Shared page links keep navigation structure predictable. -->
+            <ul id="primary-navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html" aria-current="page">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="addEntry.html">Add Entry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Education content: intro, two key stages, and current learning focus. -->
+    <main id="main-content" class="page-shell">
+        <!-- Intro block summarises this page for assessors and recruiters. -->
+        <section class="page-intro" aria-labelledby="education-title">
+            <p class="kicker">Education</p>
+            <h1 id="education-title">Academic Journey</h1>
+            <p class="lead">
+                My current path combines a strong computer science foundation with analytical training from A Levels.
+            </p>
+        </section>
+
+        <!-- Two-card timeline layout for current degree and prior qualifications. -->
+        <section class="edu-grid" aria-label="Education timeline">
+            <!-- Current university study card. -->
+            <article class="edu-card">
+                <header class="edu-card-header">
+                    <h2>Queen Mary University of London</h2>
+                    <p class="edu-location">London, Mile End</p>
+                    <p class="edu-dates">September 2025 - June 2028 (expected)</p>
+                </header>
+
+                <p class="edu-award">BSc Computer Science</p>
+                <h3>Current module areas</h3>
+                <ul class="edu-list">
+                    <li>Procedural Programming (Java)</li>
+                    <li>Computer Systems and Networks</li>
+                    <li>Logic and Discrete Structures</li>
+                </ul>
+            </article>
+
+            <!-- Previous school and A-Level outcomes card. -->
+            <article class="edu-card">
+                <header class="edu-card-header">
+                    <h2>Ashmole Academy</h2>
+                    <p class="edu-location">London, Barnet</p>
+                    <p class="edu-dates">September 2023 - June 2025</p>
+                </header>
+
+                <p class="edu-award">A Levels</p>
+                <ul class="edu-list">
+                    <li>Mathematics: A</li>
+                    <li>Computer Science: B</li>
+                    <li>Economics: B</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Current development focus links education to portfolio project work. -->
+        <section class="edu-notes" aria-labelledby="edu-focus-title">
+            <h2 id="edu-focus-title">Learning focus</h2>
+            <p class="lead">
+                I am learning how to efficiently web scrape and analyse the data using Python, with a focus on building end-to-end pipeline that can be applied to real-world data collection and analysis tasks.
+            </p>
+        </section>
+    </main>
+
+    <!-- Shared footer creates a clear page boundary and consistent branding. -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Andy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

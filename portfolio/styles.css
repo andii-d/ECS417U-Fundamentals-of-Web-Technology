@@ -1,0 +1,372 @@
+/* styles.css: shared design system for all portfolio pages.
+   Every page-level stylesheet imports this file first, then adds page-specific rules. */
+
+/* =============================
+   Colour System and Core Tokens
+   ============================= */
+:root {
+    --c-ink: #000f08;
+    --c-deep: #1c3738;
+    --c-muted: #4d4847;
+    --c-paper: #f4fff8;
+    --c-soft: #8baaad;
+
+    --radius-lg: 18px;
+    --radius-md: 14px;
+    --shadow-soft: 0 8px 18px rgba(28, 55, 56, 0.08);
+}
+
+/* ===========
+   Base Layout
+   =========== */
+body {
+    margin: 0;
+    padding: 0.3rem 1cm 0.6rem;
+    background: var(--c-paper);
+    color: var(--c-ink);
+    font-family: "Nunito Sans", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Merriweather", serif;
+    line-height: 1.2;
+}
+
+main {
+    margin-top: 0.75rem;
+}
+
+/* ======================
+   Accessibility Helpers
+   ====================== */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--c-deep);
+    color: var(--c-paper);
+
+    border-radius: 0 0 0.45rem 0.45rem;
+}
+
+.skip-link:focus {
+    left: 0.75rem;
+    z-index: 30;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ======================
+   Header and Navigation
+   ====================== */
+.nav-header {
+    position: sticky;
+    top: 0.42rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding: 0.55rem 0.85rem;
+    background: var(--c-paper);
+    border: 1px solid var(--c-soft);
+    border-radius: var(--radius-md);
+    box-shadow: 0 6px 14px rgba(28, 55, 56, 0.08);
+}
+
+.site-mark {
+    padding-left: 0.3rem;
+    font-family: "Merriweather", serif;
+    font-size: 1.26rem;
+    font-weight: 700;
+    color: var(--c-muted);
+    white-space: nowrap;
+}
+
+.site-nav {
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.4rem;
+}
+
+.site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem;
+}
+
+.site-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: var(--c-paper);
+    color: var(--c-muted);
+    font-weight: 700;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a[aria-current="page"] {
+    background: rgba(139, 170, 173, 0.2);
+    border-color: var(--c-muted);
+    color: var(--c-deep);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    background: rgba(139, 170, 173, 0.2);
+    border-color: var(--c-muted);
+    color: var(--c-deep);
+}
+
+/* Hamburger trigger shown only when JS marks nav as collapsible. */
+.nav-toggle {
+    display: none;
+    width: 2.35rem;
+    height: 2.15rem;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: var(--c-paper);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.18rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+    background: rgba(139, 170, 173, 0.2);
+    border-color: var(--c-muted);
+}
+
+.nav-toggle-bar {
+    width: 1rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--c-muted);
+}
+
+.site-nav.is-collapsible .nav-toggle {
+    display: inline-flex;
+}
+
+.site-nav.is-collapsible ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.38rem);
+    right: 0;
+    width: 12.5rem;
+    padding: 0.35rem;
+    border: none;
+    border-radius: 0.7rem;
+    background: var(--c-paper);
+    box-shadow: var(--shadow-soft);
+}
+
+/* In collapsed mode, links look like plain menu rows instead of boxed desktop pills. */
+.site-nav.is-collapsible a {
+    border: none;
+}
+
+.site-nav.is-collapsible a:hover,
+.site-nav.is-collapsible a:focus-visible {
+    border-color: transparent;
+}
+
+/* JS toggles .is-open to reveal the mobile dropdown list. */
+.site-nav.is-collapsible.is-open ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+}
+
+/* =====================
+   Shared Text Treatment
+   ===================== */
+.kicker {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--c-muted);
+}
+
+h1 {
+    margin-top: 0.45rem;
+    font-size: clamp(2rem, 4.1vw, 3rem);
+    color: var(--c-ink);
+}
+
+.lead {
+    margin-top: 0.55rem;
+    color: var(--c-muted);
+    max-width: 65ch;
+}
+
+.form-note {
+    color: var(--c-muted);
+}
+
+/* ==========================
+   Shared Form + Button Rules
+   ========================== */
+.form-field label {
+    display: block;
+    margin-bottom: 0.34rem;
+    font-weight: 700;
+    color: var(--c-deep);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    border: 1px solid var(--c-soft);
+    border-radius: 0.55rem;
+    background: #ffffff;
+    color: var(--c-ink);
+    padding: 0.58rem 0.68rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field textarea {
+    resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: rgba(77, 72, 71, 0.72);
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible,
+.form-field textarea:focus-visible {
+    outline: none;
+    border-color: var(--c-muted);
+    box-shadow: 0 0 0 3px rgba(139, 170, 173, 0.3);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.btn {
+    border: 1px solid transparent;
+    border-radius: 0.55rem;
+    padding: 0.56rem 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: var(--c-deep);
+    color: var(--c-paper);
+    border-color: var(--c-deep);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: #244849;
+}
+
+.btn-secondary {
+    background: rgba(139, 170, 173, 0.18);
+    color: var(--c-deep);
+    border-color: var(--c-soft);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background: rgba(139, 170, 173, 0.3);
+    border-color: var(--c-muted);
+}
+
+.help-list {
+    margin-top: 0.7rem;
+    padding-left: 1.15rem;
+    list-style: disc;
+    display: grid;
+    gap: 0.42rem;
+    color: var(--c-muted);
+}
+
+.help-list li::marker {
+    color: var(--c-soft);
+}
+
+/* ======
+   Footer
+   ====== */
+.site-footer {
+    margin-top: 0.5rem;
+    padding: 0.55rem 0.55rem 0.2rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background: var(--c-paper);
+    text-align: center;
+    color: var(--c-muted);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* ==================
+   Shared Responsives
+   ================== */
+/* Tablet/small-laptop adjustments. */
+@media (max-width: 900px) {
+    body {
+        padding: 0.3rem 0.6cm 0.45rem;
+    }
+
+    .nav-header {
+        position: static;
+    }
+}
+
+/* Phone-specific spacing and nav dropdown sizing. */
+@media (max-width: 560px) {
+    body {
+        padding: 0.18rem 0.35rem 0.35rem;
+    }
+
+    .nav-header {
+        padding: 0.45rem 0.6rem;
+    }
+
+    .site-mark {
+        font-size: 1.1rem;
+    }
+
+    .site-nav.is-collapsible ul {
+        width: min(88vw, 12.5rem);
+    }
+}
